@@ -15,12 +15,14 @@ header {
 }
 
 .home-link {
-    display: block; /* Makes it take its own line */
-    text-align: left; /* Aligns the text to the left */
-    font-size: 1.2em;
+    display: inline-block; /* Makes it behave like a button */
+    font-size: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #007bff;
+    background-color: #F11968; /* Your requested RGB color */
+    color: white; /* White text for better contrast */
+    padding: 10px 15px; /* Adds space inside the frame */
+    border-radius: 8px; /* This creates the "smoothed angles" */
     margin-bottom: 20px;
 }
 
