@@ -1,0 +1,68 @@
+/* General body styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Header section with the home link and image */
+header {
+    text-align: center; /* This centers the image */
+    padding: 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.home-link {
+    display: block; /* Makes it take its own line */
+    text-align: left; /* Aligns the text to the left */
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+header img {
+    max-width: 200px; /* Adjust the size of your image */
+    height: auto;
+    border-radius: 50%; /* Makes the image a circle, like in the example */
+}
+
+/* Main container for nav and content */
+.container {
+    display: flex; /* This creates the side-by-side layout */
+    padding: 20px;
+}
+
+/* Navigation menu on the left */
+nav {
+    width: 200px; /* Fixed width for the navigation bar */
+    padding-right: 20px;
+}
+
+nav ul {
+    list-style-type: none; /* Removes the bullet points */
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    background-color: #eee;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #007bff; /* Color change on hover */
+    color: white;
+}
+
+/* Main content area */
+main {
+    flex-grow: 1; /* Allows the main content to fill the remaining space */
+}
