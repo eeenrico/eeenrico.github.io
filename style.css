@@ -15,11 +15,12 @@ body {
 
 /* Header section with the home link and image */
 header {
-    position: relative; /* Add this line */
+    position: relative;
     text-align: center;
     padding: 20px;
     background-color: white;
     border-bottom: 1px solid #ddd;
+    min-height: 250px; /* Add this to ensure enough space for the image */
 }
 
 .home-link {
