@@ -16,15 +16,18 @@ header {
 }
 
 .home-link {
-    display: inline-block; /* Makes it behave like a button */
+    position: absolute; /* Add this line to position it */
+    top: 20px;          /* Distance from the top of the header */
+    left: 20px;         /* Distance from the left of the header */
+    display: inline-block;
     font-size: 1em;
     font-weight: bold;
     text-decoration: none;
-    background-color: #F11968; /* Your requested RGB color */
-    color: white; /* White text for better contrast */
-    padding: 10px 15px; /* Adds space inside the frame */
-    border-radius: 8px; /* This creates the "smoothed angles" */
-    margin-bottom: 20px;
+    background-color: #D93025;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    /* The margin-bottom is no longer needed with absolute positioning */
 }
 
 header img {
