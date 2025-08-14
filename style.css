@@ -6,6 +6,13 @@ body {
     background-color: #f8f8f8;
 }
 
+/* New style for the link container */
+.header-links {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
 /* Header section with the home link and image */
 header {
     position: relative; /* Add this line */
@@ -16,10 +23,9 @@ header {
 }
 
 .home-link {
-    position: absolute; /* Add this line to position it */
-    top: 20px;          /* Distance from the top of the header */
-    left: 20px;         /* Distance from the left of the header */
-    display: inline-block;
+    /* Position rules are removed */
+    display: block; /* Makes the buttons stack vertically */
+    margin-bottom: 10px; /* Adds space below the Homepage button */
     font-size: 1em;
     font-weight: bold;
     text-decoration: none;
@@ -27,8 +33,22 @@ header {
     color: white;
     padding: 10px 15px;
     border-radius: 8px;
-    /* The margin-bottom is no longer needed with absolute positioning */
 }
+
+/* New style for the external link button */
+.external-link {
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #007bff; /* A nice blue color */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center; /* Ensures text is centered in the button */
+}
+
+
 
 header img {
     width: 471px;
