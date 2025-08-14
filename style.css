@@ -8,7 +8,8 @@ body {
 
 /* Header section with the home link and image */
 header {
-    text-align: center; /* This centers the image */
+    position: relative; /* Add this line */
+    text-align: center;
     padding: 20px;
     background-color: white;
     border-bottom: 1px solid #ddd;
