@@ -25,9 +25,7 @@ header {
 }
 
 header img {
-    max-width: 200px; /* Adjust the size of your image */
     height: auto;
-    border-radius: 50%; /* Makes the image a circle, like in the example */
 }
 
 /* Main container for nav and content */
