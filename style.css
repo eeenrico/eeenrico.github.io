@@ -12,6 +12,10 @@
     text-decoration: underline;
            }
 
+.extra-bold {
+  font-weight: 900; 
+}
+
 /* General body styling */
 
 body {
