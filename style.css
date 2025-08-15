@@ -46,7 +46,6 @@ header {
 .home-link {
     /* Position rules are removed */
     display: block; /* Makes the buttons stack vertically */
-    margin-bottom: 10px; /* Adds space below the Homepage button */
     font-size: 1em;
     font-weight: bold;
     text-decoration: none;
@@ -54,6 +53,14 @@ header {
     color: white;
     padding: 10px 15px;
     border-radius: 8px;
+}
+
+.header-link a {
+    margin-bottom: 10px;
+}
+
+.header-links a:last-child {
+    margin-bottom: 0;
 }
 
 /* New style for the external link button */
