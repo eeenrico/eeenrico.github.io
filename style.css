@@ -26,55 +26,50 @@ body {
     background-color: #f8f8f8;
 }
 
-/* New style for the link container */
-.header-links {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
 
-/* Header section with the home link and image */
+
+
+
+
+/* Header section */
 header {
     position: relative;
     text-align: center;
     padding: 20px;
     background-color: white;
     border-bottom: 1px solid #ddd;
-    min-height: 250px; /* Add this to ensure enough space for the image */
+    min-height: 250px;
 }
 
-.home-link {
-    /* Position rules are removed */
-    display: block; /* Makes the buttons stack vertically */
-    font-size: 1em;
-    font-weight: bold;
-    text-decoration: none;
-    background-color: #F11968;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
+/* Container for the top-left buttons */
+.header-links {
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 
-.header-link a {
-    margin-bottom: 10px;
-}
-
-.header-links a:last-child {
-    margin-bottom: 0;
-}
-
-/* New style for the external link button */
-.external-link {
+/* Style for ALL buttons in the header-links container */
+.header-links a {
     display: block;
     font-size: 1em;
     font-weight: bold;
     text-decoration: none;
-    background-color: #F11968; 
     color: white;
     padding: 10px 15px;
     border-radius: 8px;
-    text-align: center; /* Ensures text is centered in the button */
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #F11968; /* This sets the color for all buttons */
 }
+
+/* This REMOVES the space from the VERY LAST button */
+.header-links a:last-child {
+    margin-bottom: 0;
+}
+
+
+
+
 
 
 
