@@ -26,6 +26,11 @@ body {
     background-color: #f8f8f8;
 }
 
+header img {
+    width: 611px;
+    height: auto;
+}
+
 
 
 
@@ -70,13 +75,6 @@ header {
 
 
 
-
-
-
-header img {
-    width: 571px;
-    height: auto;
-}
 
 /* Main container for nav and content */
 .container {
