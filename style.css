@@ -108,6 +108,31 @@ nav a:hover {
     color: white;
 }
 
+
+/* Container to center the button */
+.button-container {
+    text-align: center;
+    margin-top: 40px; /* Adds some space above the button */
+}
+
+/* The actual button style */
+.email-button {
+    display: inline-block; /* Allows us to set width and padding */
+    width: 350px;          /* Adjust the width as you like */
+    padding-top: 20px;     /* These two control the height */
+    padding-bottom: 20px;
+    
+    background-color: #007bff; /* A nice blue color */
+    color: white;              /* White text */
+    text-decoration: none;     /* Removes the default link underline */
+    
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;      /* Gives it rounded corners */
+}
+
+
+
 /* Main content area */
 main {
     flex-grow: 1; /* Allows the main content to fill the remaining space */
