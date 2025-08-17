@@ -27,7 +27,7 @@ body {
 }
 
 header img {
-    width: 611px;
+    width: 641px;
     height: auto;
 }
 
@@ -82,9 +82,10 @@ header {
     padding: 20px;
 }
 
+
 /* Navigation menu on the left */
 nav {
-    width: 200px; /* Fixed width for the navigation bar */
+    width: 300px; /* larghezza tab EMI et cetera */
     padding-right: 20px;
 }
 
