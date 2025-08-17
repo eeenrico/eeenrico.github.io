@@ -64,7 +64,7 @@ header {
     border-radius: 8px;
     text-align: center;
     margin-bottom: 10px;
-    background-color: #5F9EA0; /* This sets the color for all buttons */
+    background-color: #6082B6; /* This sets the color for all buttons */
 }
 
 /* This REMOVES the space from the VERY LAST button */
@@ -122,7 +122,7 @@ nav a:hover {
     padding-top: 20px;     /* These two control the height */
     padding-bottom: 20px;
     
-    background-color: #800020; /* A nice blue color */
+    background-color: #778899; /* A nice blue color */
     color: white;              /* White text */
     text-decoration: none;     /* Removes the default link underline */
     
