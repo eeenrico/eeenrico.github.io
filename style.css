@@ -107,6 +107,27 @@ main {
     display: block;
 }
 
+/* "Send an email" button styles */
+.button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.email-button {
+    display: inline-block;
+    width: 350px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #778899;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+
+
 /* ======================================= */
 /* Mobile Responsive Styles (768px and below) */
 /* ======================================= */
