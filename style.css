@@ -61,7 +61,7 @@ header {
     border-radius: 8px;
     text-align: center;
     margin-bottom: 10px;
-    background-color: #F11968;
+    background-color: #A1D6B1;
 }
 
 /* This REMOVES the space from the VERY LAST button */
@@ -72,8 +72,8 @@ header {
 /* Container for the name and logo in the top right */
 .header-info {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
     display: flex;          /* This is the key */
     align-items: center;    /* to vertically centering your name and logo */
 }
@@ -81,7 +81,7 @@ header {
 /* Style for your name */
 .header-info span {
     color: #8D293F;
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-weight: 900;
     text-transform: uppercase;
     margin-right: 15px;
@@ -89,7 +89,7 @@ header {
 
 /* Style for the logo */
 .header-info img {
-    height: 50px;
+    height: 40px;
     width: auto;
 }
 
