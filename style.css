@@ -2,22 +2,9 @@
 :root {
     --ecolor: #F11968;
     --myfont: 'Frank Ruhl Libre', serif;
-    --heads: 'Encode Sans Semi Condended', sans-serif;
-    --title: 'Mulish', sans-serif;
-     
-      }
-
-
-.underline {
-    text-decoration: underline;
-           }
-
-.extra-bold {
-  font-weight: 900; 
 }
 
 /* General body styling */
-
 body {
     font-family: var(--myfont);
     font-weight: 300;
@@ -26,31 +13,26 @@ body {
     background-color: #f8f8f8;
 }
 
-header img {
-    width: 641px;
-    height: auto;
-}
-
-
-
 /* Header section */
 header {
-    position: relative; /* Allows absolute positioning inside */
-    text-align: center; /* This perfectly centers your main image */
-    padding: 20px 180px; /* This is the key: adds "safe zones" on the left and right */
+    position: relative;
+    text-align: center;
+    padding: 20px 180px;
     background-color: white;
     border-bottom: 1px solid #ddd;
     min-height: 250px;
 }
+header img.main-photo {
+    width: 641px;
+    height: auto;
+}
 
-/* Container for the top-left buttons */
+/* Top-left buttons */
 .header-links {
     position: absolute;
     top: 20px;
     left: 20px;
 }
-
-/* Style for ALL buttons in the header-links container */
 .header-links a {
     display: block;
     font-size: 1em;
@@ -61,65 +43,47 @@ header {
     border-radius: 8px;
     text-align: center;
     margin-bottom: 10px;
-    background-color: #a1b6d1; 
+    background-color: #a1b6d1;
 }
-
-/* This REMOVES the space from the VERY LAST button */
 .header-links a:last-child {
     margin-bottom: 0;
 }
 
-/* Container for the name and logo in the top right */
+/* Top-right name and logo */
 .header-info {
     position: absolute;
     top: 15px;
     right: 15px;
-    display: flex;          /* This is the key */
-    align-items: center;    /* to vertically centering your name and logo */
+    display: flex;
+    align-items: center;
 }
-
-/* Style for your name */
 .header-info span {
-    color: #8D293F; /* Rosso bello */
+    color: #8D293F;
     font-size: 1.7em;
     font-weight: 900;
     text-transform: uppercase;
     margin-right: 15px;
 }
-
-/* Style for the logo */
 .header-info img {
     height: 45px;
     width: auto;
 }
 
-
-
-
-
-
-
-
-
-
 /* Main container for nav and content */
 .container {
-    display: flex; /* This creates the side-by-side layout */
+    display: flex;
     padding: 20px;
 }
 
-
-/* Navigation menu on the left */
+/* Main Navigation menu on the left (EMI, etc.) */
 nav {
-    width: 273px; /* larghezza tab EMI et cetera */
+    width: 273px;
     padding-right: 20px;
 }
-
 nav ul {
-    list-style-type: none; /* Removes the bullet points */
+    list-style-type: none;
     padding: 0;
 }
-
 nav a {
     display: block;
     padding: 10px;
@@ -129,52 +93,28 @@ nav a {
     margin-bottom: 5px;
     border-radius: 5px;
 }
-
 nav a:hover {
-    background-color: #869FBF; /* Color change on hover */
+    background-color: #869FBF;
     color: white;
 }
 
-
-/* Container to center the button */
-.button-container {
-    text-align: center;
-    margin-top: 40px; /* Adds some space above the button */
+/* Main content area */
+main {
+    flex-grow: 1;
 }
 
-/* The actual button style */
-.email-button {
-    display: inline-block; /* Allows us to set width and padding */
-    width: 350px;          /* Adjust the width as you like */
-    padding-top: 20px;     /* These two control the height */
-    padding-bottom: 20px;
-    
-    background-color: #778899; /* A nice blue color */
-    color: white;              /* White text */
-    text-decoration: none;     /* Removes the default link underline */
-    
-    font-size: 1.2em;
-    font-weight: bold;
-    border-radius: 8px;      /* Gives it rounded corners */
-}
-
-
 /* ======================================= */
-/* Responsive Styles - START OF THE BLOCK  */
+/* Responsive Styles for Mobile            */
 /* ======================================= */
-
-/* Hide the hamburger menu on desktop by default */
 .hamburger-menu {
-    display: none;
+    display: none; /* Hidden on desktop */
 }
-
-/* This is a special class that your JavaScript will use */
 .header-links.show {
-    display: block;
+    display: block; /* Class added by JavaScript to show menu */
 }
 
-/* --- TABLET STYLES (applies only to screens 1024px wide or less) --- */
 @media (max-width: 1024px) {
+    /* --- General adjustments for tablets --- */
     header {
         padding: 20px;
     }
@@ -182,24 +122,15 @@ nav a:hover {
         width: 50%;
         max-width: 400px;
     }
-    .header-info span {
-        font-size: 1.2em;
-    }
-    .header-info img {
-        height: 35px;
+    nav {
+        width: 220px; /* Make nav slightly narrower */
     }
 }
 
-/* --- SMARTPHONE STYLES (applies only to screens 768px wide or less) --- */
 @media (max-width: 768px) {
-    /* Stack the header items vertically */
-    header {
-        flex-direction: column;
-        gap: 20px;
-        padding: 15px;
-    }
-
-    /* Show the hamburger button on mobile */
+    /* --- Major changes for phones --- */
+    
+    /* Show hamburger button and hide desktop buttons */
     .hamburger-menu {
         display: block;
         position: absolute;
@@ -212,65 +143,24 @@ nav a:hover {
         cursor: pointer;
         z-index: 100;
     }
-
-    /* Hide the original desktop buttons on mobile */
     .header-links {
-        display: none;
-        position: static;
-        width: 100%;
-        order: 3;
+        display: none; /* Hide button menu by default */
+        background: white;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
     }
-
-    /* Re-order your header content for mobile */
     .header-info {
-        position: static;
-        order: 1;
-        padding-top: 40px;
+        display: none; /* Hide name/logo on small phones for space */
     }
-    header img.main-photo {
-        order: 2;
-    }
-
-    /* Hide the original side navigation on mobile */
-    .container > nav {
-        display: none;
-    }
+    
+    /* Stack the main nav and content vertically */
     .container {
         flex-direction: column;
     }
-    
-    /* Style the links inside the mobile menu */
-    .header-links a,
-    .mobile-nav a {
-        background-color: #eee;
-        color: #333;
-        margin-bottom: 5px;
-    }
-    .header-links a:hover,
-    .mobile-nav a:hover {
-        background-color: #a1b6d1;
-        color: white;
-    }
-    .mobile-nav ul {
-        padding: 0;
-        margin-top: 20px;
-    }
-    .mobile-nav li {
-        list-style-type: none;
+    nav {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
     }
 }
-/* ======================================= */
-/* Responsive Styles - END OF THE BLOCK    */
-/* ======================================= */
-
-
-
-/* Main content area */
-main {
-    flex-grow: 1; /* Allows the main content to fill the remaining space */
-}
-
-
-
-
-
