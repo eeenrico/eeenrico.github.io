@@ -59,6 +59,12 @@ header {
     margin-right: 15px; /* Adds space between your name and the logo */
 }
 
+/* Stile del logo */
+.header-info img {
+    height: 50px; /* Adjust this value to make the logo smaller or larger */
+    width: auto;  /* This makes sure the logo doesn't get distorted */
+}
+
 /* Container nome e logo alto destra. */
 .header-info {
     display: flex;
