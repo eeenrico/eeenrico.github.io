@@ -33,54 +33,22 @@ header img {
 
 
 
-
-/* Header section using Flexbox for robust layout */
+/* Header section */
 header {
-    display: flex;                 /* Activates Flexbox */
-    justify-content: space-between;/* Puts space between the items */
-    align-items: center;           /* Vertically aligns everything */
-    padding: 20px;
+    position: relative; /* Allows absolute positioning inside */
+    text-align: center; /* This perfectly centers your main image */
+    padding: 20px 180px; /* This is the key: adds "safe zones" on the left and right */
     background-color: white;
     border-bottom: 1px solid #ddd;
     min-height: 250px;
 }
 
-/* Container bottoni alto sinistra */
+/* Container for the top-left buttons */
 .header-links {
-    /* No positioning needed, Flexbox handles it */
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
-
-/* Stile del nome */
-.header-info span {
-    color: #8D293F; /* An official University of Bologna burgundy */
-    font-size: 1.8em; /* This makes the text large, like you wanted */
-    font-weight: 900; /* Extra-bold */
-    text-transform: uppercase; /* Sets text to capital letters */
-    margin-right: 15px; /* Adds space between your name and the logo */
-}
-
-/* Stile del logo */
-.header-info img {
-    height: 50px; /* Adjust this value to make the logo smaller or larger */
-    width: auto;  /* This makes sure the logo doesn't get distorted */
-}
-
-/* Container nome e logo alto destra. */
-.header-info {
-    display: flex;
-    align-items: center;
-    /* No positioning needed, Flexbox handles it */
-}
-
-
-
-
-
-
-
-
-
-
 
 /* Style for ALL buttons in the header-links container */
 .header-links a {
@@ -93,13 +61,42 @@ header {
     border-radius: 8px;
     text-align: center;
     margin-bottom: 10px;
-    background-color: #A1B6D1; /* This sets the color for all buttons */
+    background-color: #F11968;
 }
 
 /* This REMOVES the space from the VERY LAST button */
 .header-links a:last-child {
     margin-bottom: 0;
 }
+
+/* Container for the name and logo in the top right */
+.header-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;          /* This is the key */
+    align-items: center;    /* to vertically centering your name and logo */
+}
+
+/* Style for your name */
+.header-info span {
+    color: #8D293F;
+    font-size: 1.8em;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-right: 15px;
+}
+
+/* Style for the logo */
+.header-info img {
+    height: 50px;
+    width: auto;
+}
+
+
+
+
+
 
 
 
