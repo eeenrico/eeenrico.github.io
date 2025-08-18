@@ -2,7 +2,10 @@
     --myfont: 'Frank Ruhl Libre', serif;
 }
 
-/* General body styling */
+/* ======================================= */
+/* Desktop Styles (for screens > 768px)    */
+/* ======================================= */
+
 body {
     font-family: var(--myfont);
     font-weight: 300;
@@ -11,7 +14,6 @@ body {
     background-color: #f8f8f8;
 }
 
-/* Header section */
 header {
     position: relative;
     text-align: center;
@@ -25,7 +27,6 @@ header img.main-photo {
     height: auto;
 }
 
-/* Top-left buttons */
 .header-links {
     position: absolute;
     top: 20px;
@@ -41,13 +42,12 @@ header img.main-photo {
     border-radius: 8px;
     text-align: center;
     margin-bottom: 10px;
-    background-color: #a1b6d1; /* Restored default color */
+    background-color: #a1b6d1;
 }
 .header-links a:last-child {
     margin-bottom: 0;
 }
 
-/* Top-right name and logo */
 .header-info {
     position: absolute;
     top: 15px;
@@ -67,13 +67,11 @@ header img.main-photo {
     width: auto;
 }
 
-/* Main container for nav and content */
 .container {
-    display: flex; /* This is the restored rule that fixes your layout */
+    display: flex;
     padding: 20px;
 }
 
-/* Main Navigation menu on the left (EMI, etc.) */
 nav {
     width: 273px;
     padding-right: 20px;
@@ -96,54 +94,33 @@ nav a:hover {
     color: white;
 }
 
-/* Main content area */
 main {
     flex-grow: 1;
 }
 
-/* "Send an email" button styles (restored) */
-.button-container {
-    text-align: center;
-    margin-top: 40px;
-}
-.email-button {
-    display: inline-block;
-    width: 350px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #778899;
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    border-radius: 8px;
-}
-
-
-/* ======================================= */
-/* Responsive Styles for Mobile            */
-/* ======================================= */
+/* Hide hamburger on desktop */
 .hamburger-menu {
     display: none;
 }
+/* This class is used by JavaScript to show the menu */
 .header-links.show {
     display: block;
 }
 
-@media (max-width: 1024px) {
-    header {
-        padding: 20px;
-    }
-    header img.main-photo {
-        width: 50%;
-        max-width: 400px;
-    }
-    nav {
-        width: 220px;
-    }
-}
+/* ======================================= */
+/* Mobile Responsive Styles (768px and below) */
+/* ======================================= */
 
 @media (max-width: 768px) {
+    /* Reset header for a simple vertical layout */
+    header {
+        position: static;
+        padding: 20px;
+        min-height: 0;
+        padding-top: 80px; /* Make space at the top for the hamburger button */
+    }
+
+    /* Show and position the hamburger button */
     .hamburger-menu {
         display: block;
         position: absolute;
@@ -154,13 +131,41 @@ main {
         border: 1px solid #ddd;
         border-radius: 5px;
         cursor: pointer;
-        z-index: 100;
-    }
-    .header-links {
-        display: none;
-        padding-top: 60px;
+        z-index: 101; /* Keep it on top */
     }
 
+    /* This is the key fix for the dropdown menu */
+    .header-links {
+        display: none; /* Hide it by default */
+        position: absolute; /* Take it out of the document flow */
+        top: 0;
+        left: 0;
+        width: 80%; /* Don't make it full-screen */
+        max-width: 280px;
+        padding: 20px;
+        padding-top: 70px; /* Push content below the hamburger button */
+        background-color: white;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        z-index: 100;
+    }
+
+    /* This is the key fix for the name/logo */
+    .header-info {
+        position: static; /* Put it back in the normal flow */
+        display: flex;
+        justify-content: center; /* Center it horizontally */
+        margin-bottom: 20px; /* Add space between it and the photo */
+    }
+
+    /* This is the key fix for the main photo */
+    header img.main-photo {
+        display: block;
+        margin: 0 auto; /* Center it */
+        width: 80%;
+        max-width: 300px;
+    }
+    
+    /* Stack the nav and main content */
     .container {
         flex-direction: column;
     }
