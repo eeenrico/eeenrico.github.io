@@ -138,3 +138,37 @@ nav a:hover {
 main {
     flex-grow: 1; /* Allows the main content to fill the remaining space */
 }
+
+
+/* =================================== */
+/* Ottimizzazione Smartphones     */
+/* =================================== */
+
+@media (max-width: 600px) {
+
+    /* This changes the two-column layout to a single, stacked column */
+    .container {
+        flex-direction: column;
+    }
+
+    /* This makes the navigation bar take the full width of the screen */
+    nav {
+        width: 100%;
+        padding-right: 0; /* Removes extra side padding */
+        margin-bottom: 20px; /* Adds some space below the nav menu */
+    }
+
+    /* This un-pins your top-left buttons and centers them for mobile */
+    .header-links {
+        position: static; /* Let the buttons flow naturally */
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    
+    /* You might want to make your main image a bit smaller on mobile */
+    header img {
+         width: 100px; /* Adjust this size as you like */
+    }
+}
+
+
