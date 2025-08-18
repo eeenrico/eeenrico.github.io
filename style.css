@@ -34,6 +34,33 @@ header img {
 
 
 
+/* Nome e Logo alto a destra. */
+.header-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex; /* Aligns items side-by-side */
+    align-items: center; /* Vertically centers the items */
+}
+
+/* Stile del nome */
+.header-info span {
+    color: #8D293F; /* An official University of Bologna burgundy */
+    font-size: 1.8em; /* This makes the text large, like you wanted */
+    font-weight: 900; /* Extra-bold */
+    text-transform: uppercase; /* Sets text to capital letters */
+    margin-right: 15px; /* Adds space between your name and the logo */
+}
+
+/* Style for the logo */
+.header-info img {
+    height: 50px; /* Adjust the height of the logo as needed */
+    width: auto; /* Maintains the logo's aspect ratio */
+}
+
+
+
+
 
 
 /* Header section */
