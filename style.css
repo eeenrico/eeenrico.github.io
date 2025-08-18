@@ -159,6 +159,110 @@ nav a:hover {
 }
 
 
+/* ======================================= */
+/* Responsive Styles with Hamburger Menu   */
+/* ======================================= */
+
+/* Hide the hamburger menu on desktop */
+.hamburger-menu {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    header {
+        padding: 20px;
+    }
+
+    header img {
+        width: 50%;
+        max-width: 400px;
+    }
+
+    .header-info span {
+        font-size: 1.2em;
+    }
+
+    .header-info img {
+        height: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Make the header items stack vertically */
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    /* Position the hamburger button at the top-left */
+    .hamburger-menu {
+        display: block; /* Show the button */
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-size: 24px;
+        background: #f8f8f8;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 100; /* Ensure it's on top */
+    }
+
+    /* --- Changes for your NAME + LOGO --- */
+    .header-info {
+        position: static; /* Un-pin it */
+        order: 1; /* Place it first in the flow */
+        padding-top: 40px; /* Add space below the hamburger button */
+    }
+
+    /* --- Changes for your MAIN PHOTO --- */
+    .main-photo { /* Let's give your photo its own class for clarity */
+        order: 2; /* Place it second */
+    }
+
+    /* --- Styles for the HIDDEN MENU --- */
+    .header-links {
+        display: none; /* Hide the menu by default */
+        position: static;
+        width: 100%;
+        order: 3; /* Place it last */
+    }
+
+    .header-links.show {
+        display: block; /* JavaScript will add this class to show the menu */
+    }
+
+    /* Style the links inside the mobile menu */
+    .header-links a,
+    .mobile-nav a {
+        background-color: #eee;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    .header-links a:hover,
+    .mobile-nav a:hover {
+        background-color: #a1b6d1;
+        color: white;
+    }
+    .mobile-nav ul {
+        padding: 0;
+        margin-top: 20px;
+    }
+    .mobile-nav li {
+        list-style-type: none;
+    }
+
+    /* Hide the original side navigation on mobile */
+    .container > nav {
+        display: none;
+    }
+    .container {
+        flex-direction: column;
+    }
+}
+
+
 
 /* Main content area */
 main {
