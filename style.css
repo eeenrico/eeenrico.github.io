@@ -160,44 +160,48 @@ nav a:hover {
 
 
 /* ======================================= */
-/* Responsive Styles with Hamburger Menu   */
+/* Responsive Styles - START OF THE BLOCK  */
 /* ======================================= */
 
-/* Hide the hamburger menu on desktop */
+/* Hide the hamburger menu on desktop by default */
 .hamburger-menu {
     display: none;
 }
 
+/* This is a special class that your JavaScript will use */
+.header-links.show {
+    display: block;
+}
+
+/* --- TABLET STYLES (applies only to screens 1024px wide or less) --- */
 @media (max-width: 1024px) {
     header {
         padding: 20px;
     }
-
-    header img {
+    header img.main-photo {
         width: 50%;
         max-width: 400px;
     }
-
     .header-info span {
         font-size: 1.2em;
     }
-
     .header-info img {
         height: 35px;
     }
 }
 
+/* --- SMARTPHONE STYLES (applies only to screens 768px wide or less) --- */
 @media (max-width: 768px) {
-    /* Make the header items stack vertically */
+    /* Stack the header items vertically */
     header {
         flex-direction: column;
         gap: 20px;
         padding: 15px;
     }
 
-    /* Position the hamburger button at the top-left */
+    /* Show the hamburger button on mobile */
     .hamburger-menu {
-        display: block; /* Show the button */
+        display: block;
         position: absolute;
         top: 15px;
         left: 15px;
@@ -206,33 +210,35 @@ nav a:hover {
         border: 1px solid #ddd;
         border-radius: 5px;
         cursor: pointer;
-        z-index: 100; /* Ensure it's on top */
+        z-index: 100;
     }
 
-    /* --- Changes for your NAME + LOGO --- */
-    .header-info {
-        position: static; /* Un-pin it */
-        order: 1; /* Place it first in the flow */
-        padding-top: 40px; /* Add space below the hamburger button */
-    }
-
-    /* --- Changes for your MAIN PHOTO --- */
-    .main-photo { /* Let's give your photo its own class for clarity */
-        order: 2; /* Place it second */
-    }
-
-    /* --- Styles for the HIDDEN MENU --- */
+    /* Hide the original desktop buttons on mobile */
     .header-links {
-        display: none; /* Hide the menu by default */
+        display: none;
         position: static;
         width: 100%;
-        order: 3; /* Place it last */
+        order: 3;
     }
 
-    .header-links.show {
-        display: block; /* JavaScript will add this class to show the menu */
+    /* Re-order your header content for mobile */
+    .header-info {
+        position: static;
+        order: 1;
+        padding-top: 40px;
+    }
+    header img.main-photo {
+        order: 2;
     }
 
+    /* Hide the original side navigation on mobile */
+    .container > nav {
+        display: none;
+    }
+    .container {
+        flex-direction: column;
+    }
+    
     /* Style the links inside the mobile menu */
     .header-links a,
     .mobile-nav a {
@@ -252,15 +258,10 @@ nav a:hover {
     .mobile-nav li {
         list-style-type: none;
     }
-
-    /* Hide the original side navigation on mobile */
-    .container > nav {
-        display: none;
-    }
-    .container {
-        flex-direction: column;
-    }
 }
+/* ======================================= */
+/* Responsive Styles - END OF THE BLOCK    */
+/* ======================================= */
 
 
 
