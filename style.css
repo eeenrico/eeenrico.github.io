@@ -162,6 +162,7 @@ main {
     /* Re-order your header content for mobile AND ensures name/logo is visible */
     .header-info {
         position: static;
+        justify-content: center;
         order: 1;
         padding-top: 40px; /* Space below the hamburger button */
     }
@@ -169,9 +170,7 @@ main {
         order: 2;
     }
 
-    /* Hide the original side navigation on mobile */
-    .container > nav {
-        display: none;
+
     }
     .container {
         flex-direction: column;
