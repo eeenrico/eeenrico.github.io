@@ -127,10 +127,16 @@ main {
     }
 }
 
+/* --- SMARTPHONE STYLES (applies only to screens 768px wide or less) --- */
 @media (max-width: 768px) {
-    /* --- Major changes for phones --- */
-    
-    /* Show hamburger button and hide desktop buttons */
+    /* Stack the header items vertically */
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    /* Show hamburger button */
     .hamburger-menu {
         display: block;
         position: absolute;
@@ -143,24 +149,51 @@ main {
         cursor: pointer;
         z-index: 100;
     }
+
+    /* The dropdown menu container */
     .header-links {
-        display: none; /* Hide button menu by default */
-        background: white;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
+        display: none; /* Hidden by default */
+        position: static;
+        width: 100%;
+        order: 3;
+        padding-top: 50px; /* Prevents overlap with the hamburger button */
     }
+
+    /* Re-order your header content for mobile AND ensures name/logo is visible */
     .header-info {
-        display: none; /* Hide name/logo on small phones for space */
+        position: static;
+        order: 1;
+        padding-top: 40px; /* Space below the hamburger button */
     }
-    
-    /* Stack the main nav and content vertically */
+    header img.main-photo {
+        order: 2;
+    }
+
+    /* Hide the original side navigation on mobile */
+    .container > nav {
+        display: none;
+    }
     .container {
         flex-direction: column;
     }
-    nav {
-        width: 100%;
-        padding-right: 0;
-        margin-bottom: 20px;
+    
+    /* Style the links inside the mobile menu */
+    .header-links a,
+    .mobile-nav a {
+        background-color: #eee;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    .header-links a:hover,
+    .mobile-nav a:hover {
+        background-color: #a1b6d1;
+        color: white;
+    }
+    .mobile-nav ul {
+        padding: 0;
+        margin-top: 20px;
+    }
+    .mobile-nav li {
+        list-style-type: none;
     }
 }
