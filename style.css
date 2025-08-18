@@ -126,6 +126,24 @@ main {
     border-radius: 8px;
 }
 
+/* ======================================= */
+/* Tablet-Only Styles                      */
+/* ======================================= */
+
+@media (min-width: 770px) and (max-width: 1020px) {
+    
+    /* Style for your name on tablets */
+    .header-info span {
+        font-size: 1.2em; /* Reduced from 1.7em on desktop */
+    }
+
+    /* Style for the logo on tablets */
+    .header-info img {
+        height: 35px; /* Reduced from 45px on desktop */
+    }
+}
+
+
 
 
 /* ======================================= */
