@@ -1,5 +1,15 @@
 :root {
     --myfont: 'Frank Ruhl Libre', serif;
+    --heads: 'Encode Sans Semi Condended', sans-serif;
+    --title: 'Mulish', sans-serif;
+}
+
+.underline {
+    text-decoration: underline;
+           }
+
+.extra-bold {
+  font-weight: 900; 
 }
 
 /* ======================================= */
