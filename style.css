@@ -9,11 +9,11 @@
            }
 
 .extra-bold {
-  font-weight: 900; 
+  font-weight: 900;  
 }
 
 /* ======================================= */
-/* Desktop Styles (for screens > 1024px)   */
+/* Desktop Styles (for screens > 1024px)    */
 /* ======================================= */
 
 body {
@@ -84,7 +84,7 @@ header img.main-photo {
 /* Stile per il nome */
 .header-info span {
     color: #8D293F;
-    font-size: 1.7em;
+    font-size: 1.5em;
     font-weight: 900;
     text-transform: uppercase;
     margin-right: 15px;
@@ -106,10 +106,9 @@ nav {
     padding-right: 20px;
 }
 nav ul {
-    list-style-type: none; /* Removes the bullet points */
+    list-style-type: none;
     padding: 0;
 }
-
 nav a {
     display: block;
     padding: 10px;
@@ -119,38 +118,219 @@ nav a {
     margin-bottom: 5px;
     border-radius: 5px;
 }
-
 nav a:hover {
-    background-color: #869FBF; /* Color change on hover */
+    background-color: #869FBF;
     color: white;
 }
 
+main {
+    flex-grow: 1;
+}
 
-/* Container to center the button */
+/* Hide hamburger on desktop */
+.hamburger-menu {
+    display: none;
+}
+/* This class is used by JavaScript to show the menu */
+.header-links.show {
+    display: block;
+}
+
+/* "Send an email" button styles */
 .button-container {
     text-align: center;
-    margin-top: 40px; /* Adds some space above the button */
+    margin-top: 40px;
 }
 
-/* The actual button style */
 .email-button {
-    display: inline-block; /* Allows us to set width and padding */
-    width: 350px;         /* Adjust the width as you like */
-    padding-top: 20px;   /* These two control the height */
+    display: inline-block;
+    width: 350px;
+    padding-top: 20px;
     padding-bottom: 20px;
-    
-    background-color: #778899; /* A nice blue color */
-    color: white;              /* White text */
-    text-decoration: none;     /* Removes the default link underline */
-    
+    background-color: #778899;
+    color: white;
+    text-decoration: none;
     font-size: 1.2em;
     font-weight: bold;
-    border-radius: 8px;      /* Gives it rounded corners */
+    border-radius: 8px;
+}
+
+
+/* ======================================= */
+/* Secondary Navigation Styles (Desktop)   */
+/* ======================================= */
+
+.secondary-nav {
+    margin-top: 15px;
+    text-align: right; /* This aligns the stacked buttons to the right */
+}
+
+.secondary-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /* 'display: flex' is removed to allow items to stack vertically */
+}
+
+.secondary-nav li {
+    margin-bottom: 8px; /* This creates the space between the buttons */
+}
+.secondary-nav li:last-child {
+    margin-bottom: 0; /* Removes space after the very last button */
+}
+
+.secondary-nav a {
+    display: inline-block; /* Allows sizing while respecting text-align */
+    padding: 5px 30px;     /* Thin height (5px), long width (30px) */
+    background-color: #867979;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    white-space: nowrap;   /* This guarantees the text stays on one line */
+}
+
+.secondary-nav a:hover {
+    background-color: #5a6878;
 }
 
 
 
-/* Main content area */
-main {
-    flex-grow: 1; /* Allows the main content to fill the remaining space */
+
+
+/* ======================================= */
+/* Tablet-Only Styles                      */
+/* ======================================= */
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    
+    /* Style for your name on tablets */
+
+    header img.main-photo {
+        width: 50%;
+        max-width: 450px;
+    }
+    
+    .header-info span {
+        font-size: 1.1em; /* Reduced from 1.7em on desktop */
+    }
+
+    /* Style for the logo on tablets */
+    .header-info img {
+        height: 35px; /* Reduced from 45px on desktop */
+    }
+}
+
+
+
+/* =================================================================== */
+/* --- SMARTPHONE STYLES (applies only to screens 768px wide or less) --- */
+/* =================================================================== */
+@media (max-width: 768px) {
+    /* Reset header for a simple vertical layout */
+    header {
+        position: relative; /* Add this line to act as an anchor */
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+        padding-top: 80px; /* Make space at the top for the hamburger button */
+    }
+
+    /* --- Hamburger Buttons --- */
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 15px;
+        font-size: 24px;
+        background: #f8f8f8;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 101;
+    }
+    .hamburger-menu.right {
+        right: 15px;
+        left: auto;
+    }
+    
+    /* --- Left Dropdown Menu --- */
+.header-links {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    max-width: 280px;
+    height: 100vh; /* Make the menu full-height */
+    padding: 20px;
+    padding-top: 70px;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 100;
+    box-sizing: border-box; /* Prevents padding from breaking the layout */
+}
+    
+    .header-links.show {
+        display: block;
+    }
+    
+    /* --- Name, Logo, and Photo Centering (THE FIX) --- */
+.header-info {
+    position: static;
+    display: flex;
+    flex-direction: row; /* This is the critical fix */
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* This is the FIX for the main photo */
+header img.main-photo {
+    display: block; /* Important: treat the image as a block */
+    margin: 0 auto; /* Centers the block on the page */
+    width: 80%;
+    max-width: 300px;
+}
+
+    /* --- Secondary Navigation (THE FIX) --- */
+    .secondary-nav {
+        display: none; /* This was the missing rule to hide the tabs */
+    }
+    .secondary-nav.show {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 100;
+        text-align: right;
+    }
+    .secondary-nav.show ul {
+        flex-direction: column;
+        /* gap: 0; */
+    }
+    .secondary-nav.show a {
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 5px; /* Adds space between the buttons */
+    background-color: #867979; /* The sophisticated neutral color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.secondary-nav.show li:last-child a {
+    margin-bottom: 0; /* Removes space after the last button */
+}
+
+    /* --- Main Content Stacking --- */
+    .container {
+        flex-direction: column;
+    }
+    nav {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
 }
