@@ -155,97 +155,6 @@ main {
     border-radius: 8px;
 }
 
-/* ======================================= */
-/* Tablet-Only Styles                      */
-/* ======================================= */
-
-@media (min-width: 770px) and (max-width: 1020px) {
-    
-    /* Style for your name on tablets */
-    .header-info span {
-        font-size: 1.2em; /* Reduced from 1.7em on desktop */
-    }
-
-    /* Style for the logo on tablets */
-    .header-info img {
-        height: 35px; /* Reduced from 45px on desktop */
-    }
-}
-
-
-
-
-/* ======================================= */
-/* Mobile Responsive Styles (768px and below) */
-/* ======================================= */
-
-@media (max-width: 768px) {
-    /* Reset header for a simple vertical layout */
-    header {
-        position: static;
-        padding: 20px;
-        min-height: 0;
-        padding-top: 80px; /* Make space at the top for the hamburger button */
-    }
-
-    /* Show and position the hamburger button */
-    .hamburger-menu {
-        display: block;
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        font-size: 24px;
-        background: #f8f8f8;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        cursor: pointer;
-        z-index: 101; /* Keep it on top */
-    }
-
-    /* This is the key fix for the dropdown menu */
-    .header-links {
-        display: none; /* Hide it by default */
-        position: absolute; /* Take it out of the document flow */
-        top: 0;
-        left: 0;
-        width: 80%; /* Don't make it full-screen */
-        max-width: 280px;
-        padding: 20px;
-        padding-top: 70px; /* Push content below the hamburger button */
-        background-color: white;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-        z-index: 100;
-    }
-
-    /* This is the key fix for the name/logo */
-    .header-info {
-        position: static; /* Put it back in the normal flow */
-        display: flex;
-        justify-content: center; /* Center it horizontally */
-        margin-bottom: 20px; /* Add space between it and the photo */
-    }
-
-    /* This is the key fix for the main photo */
-    header img.main-photo {
-        display: block;
-        margin: 0 auto; /* Center it */
-        width: 80%;
-        max-width: 300px;
-    }
-    
-    /* Stack the nav and main content */
-    .container {
-        flex-direction: column;
-    }
-    nav {
-        width: 100%;
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-}
-
-
-
 
 /* ======================================= */
 /* Secondary Navigation Styles (Desktop)   */
@@ -285,23 +194,101 @@ main {
     background-color: #5a6878;
 }
 
-/* ========================================== */
-/* MOBILE STYLES for the new nav and hamburger */
-/* ========================================== */
+
+
+
+
+/* ======================================= */
+/* Tablet-Only Styles                      */
+/* ======================================= */
+
+@media (min-width: 770px) and (max-width: 1020px) {
+    
+    /* Style for your name on tablets */
+    .header-info span {
+        font-size: 1.2em; /* Reduced from 1.7em on desktop */
+    }
+
+    /* Style for the logo on tablets */
+    .header-info img {
+        height: 35px; /* Reduced from 45px on desktop */
+    }
+}
+
+
+
+
+/* --- SMARTPHONE STYLES (applies only to screens 768px wide or less) --- */
 @media (max-width: 768px) {
-    /* Position the new RIGHT hamburger button */
-    .hamburger-menu.right {
+    /* Stack the header items vertically and center them */
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+        align-items: center; /* This centers your name/logo and photo */
+    }
+
+    /* Show hamburger button */
+    .hamburger-menu {
         display: block;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-size: 24px;
+        background: #f8f8f8;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 101;
+    }
+    .hamburger-menu.right {
         right: 15px;
         left: auto;
     }
 
-    /* Hide the secondary nav by default on mobile */
-    .secondary-nav {
-        display: none;
+    /* The dropdown menu container */
+    .header-links {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        max-width: 280px;
+        padding: 20px;
+        padding-top: 70px;
+        background-color: white;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        z-index: 100;
+    }
+    .header-links.show {
+        display: block;
     }
 
-    /* Styles for the dropdown menu when it's open */
+    /* Re-order your header content for mobile */
+    .header-info {
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    header img.main-photo {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        max-width: 300px;
+    }
+    
+    /* Stack the nav and main content */
+    .container {
+        flex-direction: column;
+    }
+    nav {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Styles for the RIGHT dropdown menu when it's open */
     .secondary-nav.show {
         display: block;
         position: absolute;
@@ -312,6 +299,7 @@ main {
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         z-index: 100;
+        text-align: right; /* This aligns the text inside to the right */
     }
     .secondary-nav.show ul {
         flex-direction: column;
@@ -327,6 +315,5 @@ main {
         background-color: #eee;
     }
 }
-
 
 
