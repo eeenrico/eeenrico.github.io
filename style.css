@@ -167,20 +167,17 @@ main {
 }
 
 
-/* ======================================= */
-/* 3. Responsive Styles                    */
-/* ======================================= */
+
 /* ======================================= */
 /* Tablet-Only Styles                      */
 /* ======================================= */
 
 @media (min-width: 769px) and (max-width: 1024px) {
     
-    /* Switch header to a flexible layout to prevent overlaps */
+    /* New simplified header layout for tablets */
     header {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        align-items: center; /* Vertically align all items */
         padding: 20px;
     }
     
@@ -189,28 +186,26 @@ main {
     .header-info {
         position: static;
     }
-
-/* Make the secondary nav buttons stack vertically on tablets */
-.secondary-nav {
-    text-align: right;
-}
-.secondary-nav ul {
-    /* We no longer need display: flex here */
-}
-.secondary-nav li {
-    margin-bottom: 8px; /* Restores vertical spacing */
-}
-.secondary-nav li:last-child {
-    margin-bottom: 0;
-}
     
-    /* Adjust image and font sizes */
+    /* This is the key fix for centering the image */
     header img.main-photo {
         width: 30%;
         max-width: 300px;
-        margin-left: auto;  /* Add this line */
-        margin-right: auto; /* Add this line */
+        margin: 0 auto; /* This forces the image to the center */
     }
+    
+    /* The secondary nav remains a vertical stack on tablets */
+    .secondary-nav {
+        text-align: right;
+    }
+    .secondary-nav li {
+        margin-bottom: 8px;
+    }
+    .secondary-nav li:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* Adjust font sizes */
     .header-info span {
         font-size: 1.1em;
     }
@@ -218,6 +213,8 @@ main {
         height: 35px;
     }
 }
+
+
 
 
 /* --- SMARTPHONE STYLES (768px and below) --- */
