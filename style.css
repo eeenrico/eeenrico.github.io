@@ -13,7 +13,7 @@
 }
 
 /* ======================================= */
-/* Desktop Styles (for screens > 768px)    */
+/* Desktop Styles (for screens > 1024px)    */
 /* ======================================= */
 
 body {
@@ -202,9 +202,15 @@ main {
 /* Tablet-Only Styles                      */
 /* ======================================= */
 
-@media (min-width: 770px) and (max-width: 1020px) {
+@media (min-width: 769px) and (max-width: 1023px) {
     
     /* Style for your name on tablets */
+
+    header img.main-photo {
+        width: 50%;
+        max-width: 450px;
+    }
+    
     .header-info span {
         font-size: 0.8em; /* Reduced from 1.7em on desktop */
     }
