@@ -12,25 +12,27 @@ body {
     background-color: #f8f8f8;
 }
 
-/* --- New Flexbox Header Layout --- */
+/* --- Desktop Header Layout --- */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    position: relative;
+    text-align: center;
+    padding: 20px 15%;
     background-color: white;
     border-bottom: 1px solid #ddd;
-    gap: 20px;
+    min-height: 250px;
 }
-.header-nav-container { flex: 1; }
-.header-info { flex: 1; }
 header img.main-photo {
-    max-width: 35%;
-    max-height: 250px;
+    max-width: 641px;
+    width: 100%;
     height: auto;
 }
 
-/* --- Header Content --- */
+/* --- Desktop Header Content --- */
+.header-links {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
 .header-links a {
     display: block;
     margin-bottom: 10px;
@@ -41,121 +43,16 @@ header img.main-photo {
     text-decoration: none;
     font-weight: bold;
     text-align: center;
-    max-width: 200px; /* Constrain width */
+}
+.header-links a:last-child {
+    margin-bottom: 0;
 }
 .header-info {
+    position: absolute;
+    top: 15px;
+    right: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
-.name-logo-group {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-.header-info span {
-    color: #8D293F;
-    font-size: 1.7em;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: right;
-    margin-right: 15px;
-}
-.header-info img {
-    height: 45px;
-    width: auto;
-}
-.secondary-nav {
-    margin-top: 15px;
-}
-.secondary-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    flex-wrap: wrap; /* Allow wrapping */
-}
-.secondary-nav a {
-    display: inline-block;
-    padding: 5px 20px;
-    background-color: #867979;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9em;
-    white-space: nowrap;
-}
-
-/* --- Main Content Area Layout --- */
-.container { display: flex; padding: 20px; }
-nav.side-nav { width: 273px; padding-right: 20px; }
-nav.side-nav ul { list-style-type: none; padding: 0; }
-nav.side-nav a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-    background-color: #eee;
-    margin-bottom: 5px;
-    border-radius: 5px;
-}
-nav.side-nav a:hover { background-color: #869FBF; color: white; }
-main { flex-grow: 1; }
-
-/* --- Default State for Mobile Elements --- */
-.hamburger-menu { display: none; }
-.show { display: block !important; }
-
-/* ======================================= */
-/* 2. Responsive Styles (Tablet & Mobile)  */
-/* ======================================= */
-@media (max-width: 1024px) {
-    /* Hide desktop side nav and show hamburger */
-    nav.side-nav { display: none; }
-    .hamburger-menu { display: block; }
-    
-    /* Hide the header navigation */
-    .header-nav-container { display: none; }
-    
-    /* Style the dropdown menu */
-    .header-nav-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 280px;
-        height: 100vh;
-        padding: 70px 20px 20px 20px;
-        background-color: white;
-        z-index: 100;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.2);
-        box-sizing: border-box;
-    }
-    
-    /* Header layout for mobile/tablet */
-    header {
-        justify-content: center;
-        position: relative;
-    }
-    .header-info {
-        display: none; /* Hide name/logo on smaller screens */
-    }
-    header img.main-photo {
-        max-width: 50%;
-    }
-
-    /* On the smallest screens, simplify even more */
-    @media (max-width: 768px) {
-        .container { flex-direction: column; }
-        header img.main-photo { max-width: 60%; }
-        /* Show the main nav inside the hamburger menu */
-        .header-nav-container nav.side-nav {
-            display: block;
-            width: 100%;
-            padding: 0;
-            margin-top: 20px;
-            border-top: 1px solid #eee;
-        }
-    }
-}
+.name-logo-group
