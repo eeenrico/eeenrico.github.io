@@ -1,20 +1,9 @@
+/* ======================================= */
+/* 1. Global Settings & Variables          */
+/* ======================================= */
 :root {
     --myfont: 'Frank Ruhl Libre', serif;
-    --heads: 'Encode Sans Semi Condended', sans-serif;
-    --title: 'Mulish', sans-serif;
 }
-
-.underline {
-    text-decoration: underline;
-           }
-
-.extra-bold {
-  font-weight: 900;  
-}
-
-/* ======================================= */
-/* Desktop Styles (for screens > 1024px)    */
-/* ======================================= */
 
 body {
     font-family: var(--myfont);
@@ -24,6 +13,12 @@ body {
     background-color: #f8f8f8;
 }
 
+
+/* ======================================= */
+/* 2. Desktop Styles (Default)             */
+/* ======================================= */
+
+/* --- Header & Main Image --- */
 header {
     position: relative;
     text-align: center;
@@ -33,10 +28,12 @@ header {
     min-height: 250px;
 }
 header img.main-photo {
-    width: 641px;
+    max-width: 641px;
+    width: 100%;
     height: auto;
 }
 
+/* --- Top-Left Buttons --- */
 .header-links {
     position: absolute;
     top: 20px;
@@ -58,49 +55,66 @@ header img.main-photo {
     margin-bottom: 0;
 }
 
+/* --- Top-Right Content (Name, Logo, Secondary Nav) --- */
 .header-info {
     position: absolute;
     top: 15px;
     right: 15px;
     display: flex;
-    align-items: center;
-}
-
-
-/* New styles for the top-right container */
-.header-info {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    display: flex;
-    flex-direction: column; /* Stacks the name and new nav vertically */
-    align-items: flex-end; /* Aligns them to the right */
+    flex-direction: column;
+    align-items: flex-end;
 }
 .name-logo-group {
     display: flex;
     align-items: center;
 }
-
-/* Stile per il nome */
 .header-info span {
     color: #8D293F;
-    font-size: 1.5em;
+    font-size: 1.7em;
     font-weight: 900;
     text-transform: uppercase;
     margin-right: 15px;
 }
-
-
 .header-info img {
     height: 45px;
     width: auto;
 }
 
+/* --- Secondary Navigation (Top Right) --- */
+.secondary-nav {
+    margin-top: 15px;
+    text-align: right;
+}
+.secondary-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.secondary-nav li {
+    margin-bottom: 8px;
+}
+.secondary-nav li:last-child {
+    margin-bottom: 0;
+}
+.secondary-nav a {
+    display: inline-block;
+    padding: 5px 30px;
+    background-color: #867979;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+.secondary-nav a:hover {
+    background-color: #5a6878;
+}
+
+/* --- Main Content Area Layout --- */
 .container {
     display: flex;
     padding: 20px;
 }
-
 nav {
     width: 273px;
     padding-right: 20px;
@@ -122,26 +136,15 @@ nav a:hover {
     background-color: #869FBF;
     color: white;
 }
-
 main {
     flex-grow: 1;
 }
 
-/* Hide hamburger on desktop */
-.hamburger-menu {
-    display: none;
-}
-/* This class is used by JavaScript to show the menu */
-.header-links.show {
-    display: block;
-}
-
-/* "Send an email" button styles */
+/* --- Special Buttons (e.g., Email page) --- */
 .button-container {
     text-align: center;
     margin-top: 40px;
 }
-
 .email-button {
     display: inline-block;
     width: 350px;
@@ -155,92 +158,57 @@ main {
     border-radius: 8px;
 }
 
-
-/* ======================================= */
-/* Secondary Navigation Styles (Desktop)   */
-/* ======================================= */
-
-.secondary-nav {
-    margin-top: 15px;
-    text-align: right; /* This aligns the stacked buttons to the right */
+/* --- Default State for Mobile Elements --- */
+.hamburger-menu {
+    display: none;
 }
-
-.secondary-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    /* 'display: flex' is removed to allow items to stack vertically */
+.header-links.show, .secondary-nav.show {
+    display: block !important;
 }
-
-.secondary-nav li {
-    margin-bottom: 8px; /* This creates the space between the buttons */
-}
-.secondary-nav li:last-child {
-    margin-bottom: 0; /* Removes space after the very last button */
-}
-
-.secondary-nav a {
-    display: inline-block; /* Allows sizing while respecting text-align */
-    padding: 5px 30px;     /* Thin height (5px), long width (30px) */
-    background-color: #867979;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9em;
-    white-space: nowrap;   /* This guarantees the text stays on one line */
-}
-
-.secondary-nav a:hover {
-    background-color: #5a6878;
-}
-
-
-
 
 
 /* ======================================= */
-/* Tablet-Only Styles                      */
+/* 3. Responsive Styles                    */
 /* ======================================= */
 
-@media (min-width: 769px) and (max-width: 1023px) {
-    
-    /* Style for your name on tablets */
-
+/* --- TABLET STYLES (769px to 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header {
+        padding: 20px;
+    }
     header img.main-photo {
         width: 50%;
         max-width: 450px;
     }
-    
     .header-info span {
-        font-size: 1.1em; /* Reduced from 1.7em on desktop */
+        font-size: 1.2em;
     }
-
-    /* Style for the logo on tablets */
     .header-info img {
-        height: 35px; /* Reduced from 45px on desktop */
+        height: 35px;
+    }
+    nav {
+        width: 220px;
     }
 }
 
 
-
-/* =================================================================== */
-/* --- SMARTPHONE STYLES (applies only to screens 768px wide or less) --- */
-/* =================================================================== */
+/* --- SMARTPHONE STYLES (768px and below) --- */
 @media (max-width: 768px) {
-    /* Reset header for a simple vertical layout */
     header {
-        position: relative; /* Add this line to act as an anchor */
+        position: relative; /* Anchor for dropdowns */
         flex-direction: column;
         gap: 20px;
         padding: 15px;
-        padding-top: 80px; /* Make space at the top for the hamburger button */
+        padding-top: 80px;
+        min-height: 0;
+        text-align: center;
     }
-
-    /* --- Hamburger Buttons --- */
+    
     .hamburger-menu {
         display: block;
         position: absolute;
         top: 15px;
+        left: 15px;
         font-size: 24px;
         background: #f8f8f8;
         border: 1px solid #ddd;
@@ -252,79 +220,49 @@ main {
         right: 15px;
         left: auto;
     }
-    
-    /* --- Left Dropdown Menu --- */
-.header-links {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80%;
-    max-width: 280px;
-    height: 100vh; /* Make the menu full-height */
-    padding: 20px;
-    padding-top: 70px;
-    background-color: white;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    z-index: 100;
-    box-sizing: border-box; /* Prevents padding from breaking the layout */
-}
-    
-    .header-links.show {
-        display: block;
-    }
-    
-    /* --- Name, Logo, and Photo Centering (THE FIX) --- */
-.header-info {
-    position: static;
-    display: flex;
-    flex-direction: row; /* This is the critical fix */
-    justify-content: center;
-    margin-bottom: 20px;
-}
 
-/* This is the FIX for the main photo */
-header img.main-photo {
-    display: block; /* Important: treat the image as a block */
-    margin: 0 auto; /* Centers the block on the page */
-    width: 80%;
-    max-width: 300px;
-}
-
-    /* --- Secondary Navigation (THE FIX) --- */
-    .secondary-nav {
-        display: none; /* This was the missing rule to hide the tabs */
-    }
-    .secondary-nav.show {
-        display: block;
+    .header-links, .secondary-nav {
+        display: none;
         position: absolute;
-        top: 60px;
-        right: 15px;
+        top: 0;
+        width: 80%;
+        max-width: 280px;
+        height: 100vh;
+        padding: 20px;
+        padding-top: 70px;
         background-color: white;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         z-index: 100;
-        text-align: right;
+        box-sizing: border-box;
     }
-    .secondary-nav.show ul {
-        flex-direction: column;
-        /* gap: 0; */
+    .header-links {
+        left: 0;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     }
-    .secondary-nav.show a {
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: 5px; /* Adds space between the buttons */
-    background-color: #867979; /* The sophisticated neutral color */
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-.secondary-nav.show li:last-child a {
-    margin-bottom: 0; /* Removes space after the last button */
-}
+    .secondary-nav {
+        right: 0;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    }
+    .secondary-nav ul { flex-direction: column; }
+    .secondary-nav a {
+        background-color: #867979;
+        text-align: center;
+    }
 
-    /* --- Main Content Stacking --- */
+    .header-info {
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 20px auto;
+        flex-direction: row;
+        align-items: center;
+    }
+    header img.main-photo {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        max-width: 300px;
+    }
+    
     .container {
         flex-direction: column;
     }
