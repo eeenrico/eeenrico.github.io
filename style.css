@@ -268,8 +268,9 @@ main {
 .header-info {
     position: static;
     display: flex;
+    flex-direction: row; /* This is the critical fix */
     justify-content: center;
-    margin: 0 auto 20px auto; /* Centers the entire box on the page */
+    margin-bottom: 20px;
 }
 
 /* This is the FIX for the main photo */
