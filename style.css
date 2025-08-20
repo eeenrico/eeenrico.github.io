@@ -212,7 +212,7 @@ main {
     }
     
     .header-info span {
-        font-size: 0.8em; /* Reduced from 1.7em on desktop */
+        font-size: 1.1em; /* Reduced from 1.7em on desktop */
     }
 
     /* Style for the logo on tablets */
