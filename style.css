@@ -81,6 +81,15 @@ header img.main-photo {
     align-items: center;
 }
 
+/* Stile per il nome */
+.header-info span {
+    color: #8D293F;
+    font-size: 1.7em;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-right: 15px;
+}
+
 
 .header-info img {
     height: 45px;
