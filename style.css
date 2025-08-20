@@ -178,7 +178,7 @@ main {
     
     /* Switch header to a flexible layout to prevent overlaps */
     header {
-        display: block;
+        display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 20px;
@@ -190,14 +190,19 @@ main {
         position: static;
     }
 
-    /* Make the secondary nav buttons horizontal on tablets */
-    .secondary-nav ul {
-        display: flex;
-        gap: 10px;
-    }
-    .secondary-nav li {
-        margin-bottom: 0;
-    }
+/* Make the secondary nav buttons stack vertically on tablets */
+.secondary-nav {
+    text-align: right;
+}
+.secondary-nav ul {
+    /* We no longer need display: flex here */
+}
+.secondary-nav li {
+    margin-bottom: 8px; /* Restores vertical spacing */
+}
+.secondary-nav li:last-child {
+    margin-bottom: 0;
+}
     
     /* Adjust image and font sizes */
     header img.main-photo {
