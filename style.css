@@ -255,9 +255,9 @@ main {
     
 
     
-    .header-links.show {
-        display: block;
-    }
+.header-links.show, .secondary-nav.show {
+    display: block !important;
+}
     
     /* --- Name, Logo, and Photo Centering (THE FIX) --- */
 .header-info {
