@@ -267,9 +267,9 @@ main {
     /* --- Name, Logo, and Photo Centering (THE FIX) --- */
     .header-info {
         position: static;
+        width: 100%;
         display: flex;
         justify-content: center; /* Centers items inside the box */
-        margin: 0 auto;          /* Centers the box itself */
         margin-bottom: 20px;
     }
     header img.main-photo {
