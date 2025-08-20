@@ -13,6 +13,7 @@
 
 <header>
     <button class="hamburger-menu" id="menu-toggle">&#9776;</button>
+    <button class="hamburger-menu right" id="secondary-menu-toggle">&#9776;</button>
 
     <div class="header-links" id="header-menu">
         <a href="https://eeenrico.github.io/" class="home-link">Homepage</a>
@@ -25,8 +26,16 @@
     <img src="pigeons.jpg" class="main-photo" alt="A descriptive caption for your image">
 
     <div class="header-info">
-        <span>Enrico Masina</span>
-        <img src="unibologo.png" alt="University of Bologna Logo">
+        <div class="name-logo-group">
+            <span>Enrico Masina</span>
+            <img src="unibologo.png" alt="University of Bologna">
+        </div>
+        <nav class="secondary-nav" id="secondary-menu">
+            <ul>
+                <li><a href="past-activities.html">Past Activities</a></li>
+                <li><a href="seminars.html">Seminars and Workshops</a></li>
+                </ul>
+        </nav>
     </div>
 </header>
 
@@ -76,5 +85,14 @@
     });
 </script>
 
+
+<script>
+    const secondaryMenuToggle = document.getElementById('secondary-menu-toggle');
+    const secondaryMenu = document.getElementById('secondary-menu');
+    secondaryMenuToggle.addEventListener('click', function() {
+        secondaryMenu.classList.toggle('show');
+    });
+</script>
+    
 </body>
 </html>
