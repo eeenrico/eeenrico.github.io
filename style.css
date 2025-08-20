@@ -178,7 +178,7 @@ main {
     
     /* Switch header to a flexible layout to prevent overlaps */
     header {
-        display: flex;
+        display: block;
         justify-content: space-between;
         align-items: center;
         padding: 20px;
