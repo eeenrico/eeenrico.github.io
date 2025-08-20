@@ -314,7 +314,7 @@ header img.main-photo {
         /* gap: 0; */
     }
     .secondary-nav.show a {
-    display: inline-block;
+    display: block;
     padding: 10px 15px;
     margin-bottom: 5px; /* Adds space between the buttons */
     background-color: #867979; /* The sophisticated neutral color */
