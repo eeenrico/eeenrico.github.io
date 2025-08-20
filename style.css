@@ -1,9 +1,21 @@
-/* ======================================= */
-/* 1. Global & Mobile-First Styles         */
-/* ======================================= */
 :root {
     --myfont: 'Frank Ruhl Libre', serif;
+    --heads: 'Encode Sans Semi Condended', sans-serif;
+    --title: 'Mulish', sans-serif;
 }
+
+.underline {
+    text-decoration: underline;
+           }
+
+.extra-bold {
+  font-weight: 900; 
+}
+
+/* ======================================= */
+/* Desktop Styles (for screens > 1024px)   */
+/* ======================================= */
+
 body {
     font-family: var(--myfont);
     font-weight: 300;
@@ -11,175 +23,134 @@ body {
     padding: 0;
     background-color: #f8f8f8;
 }
-.site-wrapper {
-    overflow-x: hidden; /* Prevent horizontal scroll */
-}
 
-/* --- Mobile Header --- */
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    padding-top: 60px; /* Space for hamburger */
     position: relative;
+    text-align: center;
+    padding: 20px 180px;
     background-color: white;
     border-bottom: 1px solid #ddd;
-}
-.hamburger-menu {
-    display: block;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 101;
-    font-size: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-/* Hide desktop navigation on mobile */
-.header-left, .header-right, .side-nav {
-    display: none;
+    min-height: 250px;
 }
 header img.main-photo {
-    max-width: 50%;
-}
-.name-logo-group {
-    display: none; /* Hidden on mobile to save space */
+    width: 641px;
+    height: auto;
 }
 
-/* --- Mobile Navigation Panel --- */
-.mobile-nav-container {
-    display: none;
-    position: fixed; /* Stays in place when scrolling */
-    top: 0;
-    left: -100%; /* Start off-screen */
-    width: 280px;
-    height: 100vh;
-    background-color: white;
-    z-index: 100;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+.header-links {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.header-links a {
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #a1b6d1;
+}
+.header-links a:last-child {
+    margin-bottom: 0;
+}
+
+.header-info {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* New styles for the top-right container */
+.header-info {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: column; /* Stacks the name and new nav vertically */
+    align-items: flex-end; /* Aligns them to the right */
+}
+.name-logo-group {
+    display: flex;
+    align-items: center;
+}
+
+/* Stile per il nome */
+.header-info span {
+    color: #8D293F;
+    font-size: 1.7em;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-right: 15px;
+}
+
+
+.header-info img {
+    height: 45px;
+    width: auto;
+}
+
+.container {
+    display: flex;
     padding: 20px;
-    padding-top: 60px;
-    box-sizing: border-box;
-    transition: left 0.3s ease-in-out;
-    overflow-y: auto; /* Allow scrolling if content is long */
 }
-.mobile-nav-container.show {
-    left: 0; /* Slide in */
+
+nav {
+    width: 273px;
+    padding-right: 20px;
 }
-.mobile-nav-container h3 {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
-    margin-top: 20px;
+nav ul {
+    list-style-type: none; /* Removes the bullet points */
+    padding: 0;
 }
-.mobile-nav-container a {
+
+nav a {
     display: block;
     padding: 10px;
     text-decoration: none;
     color: #333;
-    background-color: #f8f8f8;
+    background-color: #eee;
     margin-bottom: 5px;
     border-radius: 5px;
 }
 
-/* --- Mobile Main Content --- */
-.container {
-    padding: 20px;
-}
-
-/* ======================================= */
-/* 2. Tablet Styles (769px and up)         */
-/* ======================================= */
-@media (min-width: 769px) {
-    /* Show desktop navigation */
-    .header-left, .header-right, .side-nav {
-        display: block;
-    }
-    .name-logo-group {
-        display: flex;
-    }
-    /* Hide mobile navigation */
-    .hamburger-menu, .mobile-nav-container {
-        display: none;
-    }
-
-    /* Header layout for tablets */
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-    }
-    .header-left { flex: 1; }
-    .header-right { flex: 1; }
-    header img.main-photo { max-width: 30%; }
-
-    /* Main content layout for tablets */
-    .container { display: flex; }
-    nav.side-nav { width: 200px; padding-right: 20px; flex-shrink: 0; }
-    main { flex-grow: 1; }
-}
-
-/* ======================================= */
-/* 3. Desktop Styles (1200px and up)       */
-/* ======================================= */
-@media (min-width: 1200px) {
-    /* Refine desktop styles for larger screens */
-    header img.main-photo { max-width: 35%; }
-    .header-info span { font-size: 1.7em; }
-    .header-info img { height: 45px; }
-    nav.side-nav { width: 273px; }
-}
-
-/* ======================================= */
-/* 4. Common Desktop Styles (Shared)       */
-/* ======================================= */
-.header-links a {
-    display: block;
-    margin-bottom: 10px;
-    background-color: #a1b6d1;
+nav a:hover {
+    background-color: #869FBF; /* Color change on hover */
     color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
+}
+
+
+/* Container to center the button */
+.button-container {
     text-align: center;
-    max-width: 200px;
+    margin-top: 40px; /* Adds some space above the button */
 }
-.header-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+
+/* The actual button style */
+.email-button {
+    display: inline-block; /* Allows us to set width and padding */
+    width: 350px;         /* Adjust the width as you like */
+    padding-top: 20px;   /* These two control the height */
+    padding-bottom: 20px;
+    
+    background-color: #778899; /* A nice blue color */
+    color: white;              /* White text */
+    text-decoration: none;     /* Removes the default link underline */
+    
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;      /* Gives it rounded corners */
 }
-.name-logo-group {
-    align-items: center;
-}
-.header-info span {
-    color: #8D293F;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: right;
-    margin-right: 15px;
-}
-.header-info img { width: auto; }
-.secondary-nav { margin-top: 15px; }
-.secondary-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-.secondary-nav a {
-    display: inline-block;
-    padding: 5px 20px;
-    background-color: #867979;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9em;
-    white-space: nowrap;
+
+
+
+/* Main content area */
+main {
+    flex-grow: 1; /* Allows the main content to fill the remaining space */
 }
