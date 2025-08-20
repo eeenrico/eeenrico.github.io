@@ -70,7 +70,7 @@ header img.main-photo {
 }
 .header-info span {
     color: #8D293F;
-    font-size: 1.3em;
+    font-size: 1.7em;
     font-weight: 900;
     text-transform: uppercase;
     margin-right: 15px;
@@ -167,45 +167,35 @@ main {
 }
 
 
-
 /* ======================================= */
-/* Tablet-Only Styles                      */
+/* 3. Responsive Styles                    */
 /* ======================================= */
 
+/* --- TABLET STYLES (769px to 1024px) --- */
 @media (min-width: 769px) and (max-width: 1024px) {
-    
-    /* New simplified header layout for tablets */
     header {
         display: flex;
-        align-items: center; /* Vertically align all items */
+        align-items: center;
         padding: 20px;
     }
     
-    /* Put the side elements back in the normal flow */
     .header-links,
     .header-info {
         position: static;
+        flex-direction: column; /* This is a key part of the fix */
+        align-items: center; /* This is a key part of the fix */
     }
     
-    /* This is the key fix for centering the image */
     header img.main-photo {
         width: 30%;
         max-width: 300px;
-        margin: 0 auto; /* This forces the image to the center */
+        margin: 0 auto;
     }
     
-    /* The secondary nav remains a vertical stack on tablets */
     .secondary-nav {
-        text-align: right;
-    }
-    .secondary-nav li {
-        margin-bottom: 8px;
-    }
-    .secondary-nav li:last-child {
-        margin-bottom: 0;
+        text-align: center;
     }
     
-    /* Adjust font sizes */
     .header-info span {
         font-size: 1.1em;
     }
@@ -215,12 +205,10 @@ main {
 }
 
 
-
-
 /* --- SMARTPHONE STYLES (768px and below) --- */
 @media (max-width: 768px) {
     header {
-        position: relative; /* Anchor for dropdowns */
+        position: relative;
         flex-direction: column;
         gap: 20px;
         padding: 15px;
@@ -252,7 +240,6 @@ main {
         top: 0;
         width: 80%;
         max-width: 280px;
-        /* height: 100vh; */
         padding: 20px;
         padding-top: 70px;
         background-color: white;
