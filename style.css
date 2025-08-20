@@ -305,14 +305,20 @@ header img.main-photo {
     }
     .secondary-nav.show ul {
         flex-direction: column;
-        gap: 0;
+        /* gap: 0; */
     }
     .secondary-nav.show a {
-        color: #333;
-        background-color: transparent;
-        padding: 10px 20px;
-        border-radius: 0;
-    }
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: 5px; /* Adds space between the buttons */
+    background-color: #867979; /* The sophisticated neutral color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.secondary-nav.show li:last-child a {
+    margin-bottom: 0; /* Removes space after the last button */
+}
 
     /* --- Main Content Stacking --- */
     .container {
