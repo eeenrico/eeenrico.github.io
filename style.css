@@ -248,36 +248,46 @@ main {
 
 
 /* ======================================= */
-/* Secondary Navigation Styles             */
+/* Secondary Navigation Styles (Desktop)   */
 /* ======================================= */
 
-/* DESKTOP STYLES for the new nav */
 .secondary-nav {
-    margin-top: 15px; /* Space below the name/logo */
+    margin-top: 15px;
+    text-align: right; /* This aligns the stacked buttons to the right */
 }
+
 .secondary-nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Makes the buttons sit side-by-side */
-    justify-content: flex-end;
-    gap: 10px; /* Space between the buttons */
+    /* 'display: flex' is removed to allow items to stack vertically */
 }
+
+.secondary-nav li {
+    margin-bottom: 8px; /* This creates the space between the buttons */
+}
+.secondary-nav li:last-child {
+    margin-bottom: 0; /* Removes space after the very last button */
+}
+
 .secondary-nav a {
-    display: block;
-    padding: 5px 25px; /* Half vertical padding, ~1.5x horizontal */
-    background-color: #778899; /* Light slate gray */
+    display: inline-block; /* Allows sizing while respecting text-align */
+    padding: 5px 30px;     /* Thin height (5px), long width (30px) */
+    background-color: #778899;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9em;
+    white-space: nowrap;   /* This guarantees the text stays on one line */
 }
+
 .secondary-nav a:hover {
     background-color: #5a6878;
 }
 
-
+/* ========================================== */
 /* MOBILE STYLES for the new nav and hamburger */
+/* ========================================== */
 @media (max-width: 768px) {
     /* Position the new RIGHT hamburger button */
     .hamburger-menu.right {
