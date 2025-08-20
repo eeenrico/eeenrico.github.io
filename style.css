@@ -65,13 +65,23 @@ header img.main-photo {
     display: flex;
     align-items: center;
 }
-.header-info span {
-    color: #8D293F;
-    font-size: 1.5em;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-right: 15px;
+
+
+/* New styles for the top-right container */
+.header-info {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: column; /* Stacks the name and new nav vertically */
+    align-items: flex-end; /* Aligns them to the right */
 }
+.name-logo-group {
+    display: flex;
+    align-items: center;
+}
+
+
 .header-info img {
     height: 45px;
     width: auto;
@@ -224,3 +234,80 @@ main {
         margin-bottom: 20px;
     }
 }
+
+
+
+
+/* ======================================= */
+/* Secondary Navigation Styles             */
+/* ======================================= */
+
+/* DESKTOP STYLES for the new nav */
+.secondary-nav {
+    margin-top: 15px; /* Space below the name/logo */
+}
+.secondary-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Makes the buttons sit side-by-side */
+    justify-content: flex-end;
+    gap: 10px; /* Space between the buttons */
+}
+.secondary-nav a {
+    display: block;
+    padding: 5px 25px; /* Half vertical padding, ~1.5x horizontal */
+    background-color: #778899; /* Light slate gray */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+.secondary-nav a:hover {
+    background-color: #5a6878;
+}
+
+
+/* MOBILE STYLES for the new nav and hamburger */
+@media (max-width: 768px) {
+    /* Position the new RIGHT hamburger button */
+    .hamburger-menu.right {
+        display: block;
+        right: 15px;
+        left: auto;
+    }
+
+    /* Hide the secondary nav by default on mobile */
+    .secondary-nav {
+        display: none;
+    }
+
+    /* Styles for the dropdown menu when it's open */
+    .secondary-nav.show {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 100;
+    }
+    .secondary-nav.show ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    .secondary-nav.show a {
+        color: #333;
+        background-color: transparent;
+        padding: 10px 20px;
+        border-radius: 0;
+    }
+    .secondary-nav.show a:hover {
+        background-color: #eee;
+    }
+}
+
+
+
