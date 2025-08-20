@@ -40,21 +40,20 @@ header img.main-photo {
 }
 .header-links a {
     display: block;
-    font-size: 1em;
-    font-weight: bold;
-    text-decoration: none;
+    margin-bottom: 10px;
+    background-color: #a1b6d1;
     color: white;
     padding: 10px 15px;
     border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
     text-align: center;
-    margin-bottom: 10px;
-    background-color: #a1b6d1;
 }
 .header-links a:last-child {
     margin-bottom: 0;
 }
 
-/* --- Top-Right Content (Name, Logo, Secondary Nav) --- */
+/* --- Top-Right Content --- */
 .header-info {
     position: absolute;
     top: 15px;
@@ -139,7 +138,7 @@ main {
     flex-grow: 1;
 }
 
-/* --- Email Button Styles --- */
+/* --- Special Buttons (e.g., Email page) --- */
 .button-container {
     text-align: center;
     margin-top: 40px;
@@ -164,30 +163,63 @@ main {
     display: block !important;
 }
 
+
 /* ======================================= */
 /* 3. Responsive Styles                    */
 /* ======================================= */
-@media (max-width: 1024px) {
-    /* This single block now handles ALL tablets and phones */
-    
-    /* Hide the desktop side navigation */
-    .container > nav {
-        display: none;
-    }
-    /* Make main content full-width */
-    main {
-        width: 100%;
-    }
-    nav {
-        width: 100%;
-        padding: 0;
-    }
 
-    /* Show hamburger buttons */
+/* --- TABLET / LANDSCAPE STYLES (769px to 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Use a simpler, stacked header to prevent all overlaps */
+    header {
+        position: static;
+        display: block;
+        padding: 20px;
+        text-align: center;
+    }
+    .header-links, .header-info {
+        position: static;
+        margin-bottom: 25px;
+    }
+    .header-links a {
+        display: inline-block;
+        margin: 5px;
+    }
+    .header-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .secondary-nav ul {
+        display: flex;
+        gap: 10px;
+    }
+    .secondary-nav li { margin-bottom: 0; }
+    
+    header img.main-photo {
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+        max-width: 450px;
+    }
+}
+
+
+/* --- SMARTPHONE STYLES (768px and below) --- */
+@media (max-width: 768px) {
+    header {
+        position: relative; /* Anchor for dropdowns */
+        padding: 20px;
+        padding-top: 70px;
+        min-height: 0;
+    }
+    
     .hamburger-menu {
         display: block;
         position: absolute;
         top: 15px;
+        left: 15px;
         font-size: 24px;
         background: #f8f8f8;
         border: 1px solid #ddd;
@@ -195,42 +227,43 @@ main {
         cursor: pointer;
         z-index: 101;
     }
-    .hamburger-menu.right { right: 15px; left: auto; }
-    
-    /* Hide the desktop header navigation by default */
-    .header-links, .secondary-nav {
-        display: none;
+    .hamburger-menu.right {
+        right: 15px;
+        left: auto;
     }
 
-    /* Style the main side-nav (EMI, etc.) for the dropdown */
-    /* This combines it with the left hamburger menu */
-    .header-links nav {
-        margin-top: 20px;
-        border-top: 1px solid #eee;
-        padding-top: 10px;
-    }
-    
-    /* Header becomes a simple container */
-    header {
-        position: static;
-        padding: 20px;
-        padding-top: 70px; /* Space for buttons */
-        min-height: 0;
-        text-align: center;
-    }
-    
-    /* Position the dropdown menus */
     .header-links, .secondary-nav {
+        display: none;
         position: absolute;
         top: 0;
-        height: 100vh;
         width: 280px;
-        padding: 20px;
-        padding-top: 70px;
+        height: auto; /* Not full-screen */
+        padding: 70px 20px 20px 20px;
         background-color: white;
         z-index: 100;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         box-sizing: border-box;
     }
-    .header-links {
-        left: -280px; /* Start off-screen */
-        transition: left 0.3s ease-in
+    .header-links { left: 0; }
+    .secondary-nav { right: 0; }
+    .secondary-nav ul { flex-direction: column; }
+    .secondary-nav a { text-align: center; }
+
+    .header-info {
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 20px;
+    }
+    header img.main-photo {
+        display: block;
+        margin: 0 auto;
+        width: 60%;
+        max-width: 200px;
+    }
+    
+    .container { flex-direction: column; }
+    nav { width: 100%; padding-right: 0; margin-bottom: 20px; }
+}
