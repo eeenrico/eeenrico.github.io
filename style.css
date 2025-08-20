@@ -217,23 +217,23 @@ main {
 
 
 
-
+/* =================================================================== */
 /* --- SMARTPHONE STYLES (applies only to screens 768px wide or less) --- */
+/* =================================================================== */
 @media (max-width: 768px) {
-    /* Stack the header items vertically and center them */
+    /* Reset header for a simple vertical layout */
     header {
         flex-direction: column;
         gap: 20px;
         padding: 15px;
-        align-items: center; /* This centers your name/logo and photo */
+        padding-top: 80px; /* Make space at the top for the hamburger button */
     }
 
-    /* Show hamburger button */
+    /* --- Hamburger Buttons --- */
     .hamburger-menu {
         display: block;
         position: absolute;
         top: 15px;
-        left: 15px;
         font-size: 24px;
         background: #f8f8f8;
         border: 1px solid #ddd;
@@ -245,10 +245,10 @@ main {
         right: 15px;
         left: auto;
     }
-
-    /* The dropdown menu container */
+    
+    /* --- Left Dropdown Menu --- */
     .header-links {
-        display: none; /* Hidden by default */
+        display: none;
         position: absolute;
         top: 0;
         left: 0;
@@ -263,12 +263,13 @@ main {
     .header-links.show {
         display: block;
     }
-
-    /* Re-order your header content for mobile */
+    
+    /* --- Name, Logo, and Photo Centering (THE FIX) --- */
     .header-info {
         position: static;
         display: flex;
-        justify-content: center;
+        justify-content: center; /* Centers items inside the box */
+        margin: 0 auto;          /* Centers the box itself */
         margin-bottom: 20px;
     }
     header img.main-photo {
@@ -277,18 +278,11 @@ main {
         width: 80%;
         max-width: 300px;
     }
-    
-    /* Stack the nav and main content */
-    .container {
-        flex-direction: column;
-    }
-    nav {
-        width: 100%;
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
 
-    /* Styles for the RIGHT dropdown menu when it's open */
+    /* --- Secondary Navigation (THE FIX) --- */
+    .secondary-nav {
+        display: none; /* This was the missing rule to hide the tabs */
+    }
     .secondary-nav.show {
         display: block;
         position: absolute;
@@ -299,7 +293,7 @@ main {
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         z-index: 100;
-        text-align: right; /* This aligns the text inside to the right */
+        text-align: right;
     }
     .secondary-nav.show ul {
         flex-direction: column;
@@ -311,9 +305,14 @@ main {
         padding: 10px 20px;
         border-radius: 0;
     }
-    .secondary-nav.show a:hover {
-        background-color: #eee;
+
+    /* --- Main Content Stacking --- */
+    .container {
+        flex-direction: column;
+    }
+    nav {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
     }
 }
-
-
