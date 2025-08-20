@@ -170,24 +170,45 @@ main {
 /* ======================================= */
 /* 3. Responsive Styles                    */
 /* ======================================= */
+/* ======================================= */
+/* Tablet-Only Styles                      */
+/* ======================================= */
 
-/* --- TABLET STYLES (769px to 1024px) --- */
 @media (min-width: 769px) and (max-width: 1024px) {
+    
+    /* Switch header to a flexible layout to prevent overlaps */
     header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 20px;
     }
+    
+    /* Put the side elements back in the normal flow */
+    .header-links,
+    .header-info {
+        position: static;
+    }
+
+    /* Make the secondary nav buttons horizontal on tablets */
+    .secondary-nav ul {
+        display: flex;
+        gap: 10px;
+    }
+    .secondary-nav li {
+        margin-bottom: 0;
+    }
+    
+    /* Adjust image and font sizes */
     header img.main-photo {
-        width: 50%;
-        max-width: 450px;
+        width: 30%;
+        max-width: 300px;
     }
     .header-info span {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
     .header-info img {
         height: 35px;
-    }
-    nav {
-        width: 220px;
     }
 }
 
