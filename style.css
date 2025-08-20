@@ -208,6 +208,8 @@ main {
     header img.main-photo {
         width: 30%;
         max-width: 300px;
+        margin-left: auto;  /* Add this line */
+        margin-right: auto; /* Add this line */
     }
     .header-info span {
         font-size: 1.1em;
