@@ -253,21 +253,7 @@ main {
         left: auto;
     }
     
-    /* --- Left Dropdown Menu --- */
-.header-links {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80%;
-    max-width: 280px;
-    padding: 20px;
-    padding-top: 70px;
-    background-color: white;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    z-index: 100;
-    box-sizing: border-box; /* Prevents padding from breaking the layout */
-}
+
     
     .header-links.show {
         display: block;
@@ -290,38 +276,62 @@ header img.main-photo {
     max-width: 300px;
 }
 
-    /* --- Secondary Navigation (THE FIX) --- */
-    .secondary-nav {
-        display: none; /* This was the missing rule to hide the tabs */
-    }
-    .secondary-nav.show {
-        display: block;
-        position: absolute;
-        top: 60px;
-        right: 15px;
-        width: 80%;          
-        max-width: 280px;     
-        box-sizing: border-box; 
-        background-color: white;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        z-index: 100;
-        text-align: right;
-    }
-    .secondary-nav.show ul {
-        flex-direction: column;
-        /* gap: 0; */
-    }
-    .secondary-nav.show a {
+.header-links,
+.secondary-nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    max-width: 280px;
+    height: auto; /* Not full-screen */
+    padding: 20px;
+    padding-top: 70px;
+    background-color: white;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+/* This positions the LEFT menu */
+.header-links {
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+/* This positions the RIGHT menu */
+.secondary-nav {
+    right: 0;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+
+/* This is the SHARED style for buttons inside BOTH menus */
+.header-links a,
+.secondary-nav a {
     display: block;
     padding: 10px 15px;
-    margin-bottom: 5px; /* Adds space between the buttons */
-    background-color: #867979; /* The sophisticated neutral color */
-    color: white;
+    margin-bottom: 5px;
     text-decoration: none;
+    color: white;
     border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
 }
+.header-links a:last-child,
+.secondary-nav li:last-child a {
+    margin-bottom: 0;
+}
+
+/* This sets the ORIGINAL color for the left menu buttons */
+.header-links a {
+    background-color: #a1b6d1;
+}
+
+/* This sets the color YOU CHOSE for the right menu buttons */
+.secondary-nav a {
+    background-color: #867979;
+}
+
+
+    
 .secondary-nav.show li:last-child a {
     margin-bottom: 0; /* Removes space after the last button */
 }
