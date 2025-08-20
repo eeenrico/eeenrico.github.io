@@ -55,4 +55,178 @@ header img.main-photo {
     flex-direction: column;
     align-items: flex-end;
 }
-.name-logo-group
+.name-logo-group {
+    display: flex;
+    align-items: center;
+}
+.header-info span {
+    color: #8D293F;
+    font-size: 1.7em;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-right: 15px;
+}
+.header-info img {
+    height: 45px;
+    width: auto;
+}
+.secondary-nav {
+    margin-top: 15px;
+}
+.secondary-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.secondary-nav li {
+    margin-bottom: 8px;
+}
+.secondary-nav li:last-child {
+    margin-bottom: 0;
+}
+.secondary-nav a {
+    display: inline-block;
+    padding: 5px 30px;
+    background-color: #867979;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+/* --- Desktop Main Content Layout --- */
+.container {
+    display: flex;
+    padding: 20px;
+}
+nav.side-nav {
+    width: 273px;
+    padding-right: 20px;
+}
+nav.side-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav.side-nav a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    background-color: #eee;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+nav.side-nav a:hover {
+    background-color: #869FBF;
+    color: white;
+}
+main {
+    flex-grow: 1;
+}
+
+/* --- Default State for Mobile Elements --- */
+.hamburger-menu {
+    display: none;
+}
+.show {
+    display: block !important;
+}
+
+/* ======================================= */
+/* 2. Responsive Styles                    */
+/* ======================================= */
+
+/* --- TABLET / LANDSCAPE STYLES (769px to 1024px) --- */
+@media (max-width: 1024px) {
+    /* Retain the desktop layout but adjust spacing to prevent overlaps */
+    header {
+        padding: 20px 20px; /* Reduce side padding */
+    }
+    header img.main-photo {
+        max-width: 40%; /* Make image smaller */
+    }
+    .header-info span {
+        font-size: 1.2em; /* Make font smaller */
+    }
+    .header-info img {
+        height: 35px; /* Make logo smaller */
+    }
+}
+
+/* --- SMARTPHONE STYLES (768px and below) --- */
+@media (max-width: 768px) {
+    /* Switch to a mobile-specific header layout */
+    header {
+        position: relative;
+        padding: 20px;
+        padding-top: 70px;
+        min-height: 0;
+        text-align: center;
+    }
+    
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-size: 24px;
+        background: #f8f8f8;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 101;
+    }
+    .hamburger-menu.right {
+        right: 15px;
+        left: auto;
+    }
+
+    /* Hide desktop header content by default */
+    .header-links, .secondary-nav {
+        display: none;
+    }
+    
+    /* Style the dropdown menus */
+    .header-links, .secondary-nav {
+        position: absolute;
+        top: 0;
+        width: 280px;
+        height: auto; /* Not full-screen */
+        padding: 70px 20px 20px 20px;
+        background-color: white;
+        z-index: 100;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        box-sizing: border-box;
+    }
+    .header-links { left: 0; }
+    .secondary-nav { right: 0; }
+    .secondary-nav ul { flex-direction: column; }
+    .secondary-nav a { text-align: center; }
+
+    /* Center name/logo and photo */
+    .header-info {
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 20px;
+    }
+    header img.main-photo {
+        display: block;
+        margin: 0 auto;
+        width: 60%;
+        max-width: 200px;
+    }
+    
+    /* Stack main nav and content */
+    .container {
+        flex-direction: column;
+    }
+    nav.side-nav {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+}
