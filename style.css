@@ -1,10 +1,9 @@
 /* ======================================= */
-/* 1. Global Settings & Variables          */
+/* 1. Global & Desktop Styles              */
 /* ======================================= */
 :root {
     --myfont: 'Frank Ruhl Libre', serif;
 }
-
 body {
     font-family: var(--myfont);
     font-weight: 300;
@@ -13,31 +12,25 @@ body {
     background-color: #f8f8f8;
 }
 
-/* ======================================= */
-/* 2. Desktop Styles (Default)             */
-/* ======================================= */
-
-/* --- Header & Main Image --- */
+/* --- New Flexbox Header Layout --- */
 header {
-    position: relative;
-    text-align: center;
-    padding: 20px 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
     background-color: white;
     border-bottom: 1px solid #ddd;
-    min-height: 250px;
+    gap: 20px;
 }
+.header-nav-container { flex: 1; }
+.header-info { flex: 1; }
 header img.main-photo {
-    max-width: 641px;
-    width: 100%;
+    max-width: 35%;
+    max-height: 250px;
     height: auto;
 }
 
-/* --- Top-Left Buttons --- */
-.header-links {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
+/* --- Header Content --- */
 .header-links a {
     display: block;
     margin-bottom: 10px;
@@ -48,16 +41,9 @@ header img.main-photo {
     text-decoration: none;
     font-weight: bold;
     text-align: center;
+    max-width: 200px; /* Constrain width */
 }
-.header-links a:last-child {
-    margin-bottom: 0;
-}
-
-/* --- Top-Right Content --- */
 .header-info {
-    position: absolute;
-    top: 15px;
-    right: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -65,38 +51,35 @@ header img.main-photo {
 .name-logo-group {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 .header-info span {
     color: #8D293F;
     font-size: 1.7em;
     font-weight: 900;
     text-transform: uppercase;
+    text-align: right;
     margin-right: 15px;
 }
 .header-info img {
     height: 45px;
     width: auto;
 }
-
-/* --- Secondary Navigation (Top Right) --- */
 .secondary-nav {
     margin-top: 15px;
-    text-align: right;
 }
 .secondary-nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-.secondary-nav li {
-    margin-bottom: 8px;
-}
-.secondary-nav li:last-child {
-    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow wrapping */
 }
 .secondary-nav a {
     display: inline-block;
-    padding: 5px 30px;
+    padding: 5px 20px;
     background-color: #867979;
     color: white;
     text-decoration: none;
@@ -104,24 +87,12 @@ header img.main-photo {
     font-size: 0.9em;
     white-space: nowrap;
 }
-.secondary-nav a:hover {
-    background-color: #5a6878;
-}
 
 /* --- Main Content Area Layout --- */
-.container {
-    display: flex;
-    padding: 20px;
-}
-nav {
-    width: 273px;
-    padding-right: 20px;
-}
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-nav a {
+.container { display: flex; padding: 20px; }
+nav.side-nav { width: 273px; padding-right: 20px; }
+nav.side-nav ul { list-style-type: none; padding: 0; }
+nav.side-nav a {
     display: block;
     padding: 10px;
     text-decoration: none;
@@ -130,140 +101,61 @@ nav a {
     margin-bottom: 5px;
     border-radius: 5px;
 }
-nav a:hover {
-    background-color: #869FBF;
-    color: white;
-}
-main {
-    flex-grow: 1;
-}
-
-/* --- Special Buttons (e.g., Email page) --- */
-.button-container {
-    text-align: center;
-    margin-top: 40px;
-}
-.email-button {
-    display: inline-block;
-    width: 350px;
-    padding: 20px 0;
-    background-color: #778899;
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    border-radius: 8px;
-}
+nav.side-nav a:hover { background-color: #869FBF; color: white; }
+main { flex-grow: 1; }
 
 /* --- Default State for Mobile Elements --- */
-.hamburger-menu {
-    display: none;
-}
-.header-links.show, .secondary-nav.show {
-    display: block !important;
-}
-
+.hamburger-menu { display: none; }
+.show { display: block !important; }
 
 /* ======================================= */
-/* 3. Responsive Styles                    */
+/* 2. Responsive Styles (Tablet & Mobile)  */
 /* ======================================= */
-
-/* --- TABLET / LANDSCAPE STYLES (769px to 1024px) --- */
-@media (min-width: 769px) and (max-width: 1024px) {
-    /* Use a simpler, stacked header to prevent all overlaps */
-    header {
-        position: static;
-        display: block;
-        padding: 20px;
-        text-align: center;
-    }
-    .header-links, .header-info {
-        position: static;
-        margin-bottom: 25px;
-    }
-    .header-links a {
-        display: inline-block;
-        margin: 5px;
-    }
-    .header-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-    .secondary-nav ul {
-        display: flex;
-        gap: 10px;
-    }
-    .secondary-nav li { margin-bottom: 0; }
+@media (max-width: 1024px) {
+    /* Hide desktop side nav and show hamburger */
+    nav.side-nav { display: none; }
+    .hamburger-menu { display: block; }
     
-    header img.main-photo {
-        display: block;
-        margin: 0 auto;
-        width: 50%;
-        max-width: 450px;
-    }
-}
-
-
-/* --- SMARTPHONE STYLES (768px and below) --- */
-@media (max-width: 768px) {
-    header {
-        position: relative; /* Anchor for dropdowns */
-        padding: 20px;
-        padding-top: 70px;
-        min-height: 0;
-    }
+    /* Hide the header navigation */
+    .header-nav-container { display: none; }
     
-    .hamburger-menu {
-        display: block;
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        font-size: 24px;
-        background: #f8f8f8;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        cursor: pointer;
-        z-index: 101;
-    }
-    .hamburger-menu.right {
-        right: 15px;
-        left: auto;
-    }
-
-    .header-links, .secondary-nav {
-        display: none;
+    /* Style the dropdown menu */
+    .header-nav-container {
         position: absolute;
         top: 0;
+        left: 0;
         width: 280px;
-        height: auto; /* Not full-screen */
+        height: 100vh;
         padding: 70px 20px 20px 20px;
         background-color: white;
         z-index: 100;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        box-shadow: 2px 0 10px rgba(0,0,0,0.2);
         box-sizing: border-box;
     }
-    .header-links { left: 0; }
-    .secondary-nav { right: 0; }
-    .secondary-nav ul { flex-direction: column; }
-    .secondary-nav a { text-align: center; }
-
-    .header-info {
-        position: static;
-        display: flex;
+    
+    /* Header layout for mobile/tablet */
+    header {
         justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        margin-bottom: 20px;
+        position: relative;
+    }
+    .header-info {
+        display: none; /* Hide name/logo on smaller screens */
     }
     header img.main-photo {
-        display: block;
-        margin: 0 auto;
-        width: 60%;
-        max-width: 200px;
+        max-width: 50%;
     }
-    
-    .container { flex-direction: column; }
-    nav { width: 100%; padding-right: 0; margin-bottom: 20px; }
+
+    /* On the smallest screens, simplify even more */
+    @media (max-width: 768px) {
+        .container { flex-direction: column; }
+        header img.main-photo { max-width: 60%; }
+        /* Show the main nav inside the hamburger menu */
+        .header-nav-container nav.side-nav {
+            display: block;
+            width: 100%;
+            padding: 0;
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+        }
+    }
 }
