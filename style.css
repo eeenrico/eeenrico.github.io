@@ -21,7 +21,7 @@ body {
 header {
     position: relative;
     text-align: center;
-    padding: 20px 15%; /* Use flexible padding for the safe zones */
+    padding: 20px 15%;
     background-color: white;
     border-bottom: 1px solid #ddd;
     min-height: 250px;
@@ -139,6 +139,23 @@ main {
     flex-grow: 1;
 }
 
+/* --- Email Button Styles --- */
+.button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+.email-button {
+    display: inline-block;
+    width: 350px;
+    padding: 20px 0;
+    background-color: #778899;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
 /* --- Default State for Mobile Elements --- */
 .hamburger-menu {
     display: none;
@@ -147,40 +164,30 @@ main {
     display: block !important;
 }
 
-
 /* ======================================= */
 /* 3. Responsive Styles                    */
 /* ======================================= */
-
-/* --- TABLET STYLES (1024px and below) --- */
-/* This is now a much simpler rule block */
 @media (max-width: 1024px) {
-    .header-info span {
-        font-size: 1.2em;
-    }
-    .header-info img {
-        height: 35px;
-    }
-}
-
-
-/* --- SMARTPHONE STYLES (768px and below) --- */
-@media (max-width: 768px) {
-    header {
-        position: relative;
-        flex-direction: column;
-        gap: 20px;
-        padding: 15px;
-        padding-top: 80px;
-        min-height: 0;
-        text-align: center;
-    }
+    /* This single block now handles ALL tablets and phones */
     
+    /* Hide the desktop side navigation */
+    .container > nav {
+        display: none;
+    }
+    /* Make main content full-width */
+    main {
+        width: 100%;
+    }
+    nav {
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Show hamburger buttons */
     .hamburger-menu {
         display: block;
         position: absolute;
         top: 15px;
-        left: 15px;
         font-size: 24px;
         background: #f8f8f8;
         border: 1px solid #ddd;
@@ -188,18 +195,36 @@ main {
         cursor: pointer;
         z-index: 101;
     }
-    .hamburger-menu.right {
-        right: 15px;
-        left: auto;
-    }
-
+    .hamburger-menu.right { right: 15px; left: auto; }
+    
+    /* Hide the desktop header navigation by default */
     .header-links, .secondary-nav {
         display: none;
+    }
+
+    /* Style the main side-nav (EMI, etc.) for the dropdown */
+    /* This combines it with the left hamburger menu */
+    .header-links nav {
+        margin-top: 20px;
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+    }
+    
+    /* Header becomes a simple container */
+    header {
+        position: static;
+        padding: 20px;
+        padding-top: 70px; /* Space for buttons */
+        min-height: 0;
+        text-align: center;
+    }
+    
+    /* Position the dropdown menus */
+    .header-links, .secondary-nav {
         position: absolute;
         top: 0;
-        width: 80%;
-        max-width: 280px;
         height: 100vh;
+        width: 280px;
         padding: 20px;
         padding-top: 70px;
         background-color: white;
@@ -207,40 +232,5 @@ main {
         box-sizing: border-box;
     }
     .header-links {
-        left: 0;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    }
-    .secondary-nav {
-        right: 0;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    }
-    .secondary-nav ul { flex-direction: column; }
-    .secondary-nav a {
-        background-color: #867979;
-        text-align: center;
-    }
-
-    .header-info {
-        position: static;
-        display: flex;
-        justify-content: center;
-        margin: 0 auto 20px auto;
-        flex-direction: row;
-        align-items: center;
-    }
-    header img.main-photo {
-        display: block;
-        margin: 0 auto;
-        width: 80%;
-        max-width: 300px;
-    }
-    
-    .container {
-        flex-direction: column;
-    }
-    nav {
-        width: 100%;
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-}
+        left: -280px; /* Start off-screen */
+        transition: left 0.3s ease-in
