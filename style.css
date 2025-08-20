@@ -182,7 +182,7 @@ main {
 .secondary-nav a {
     display: inline-block; /* Allows sizing while respecting text-align */
     padding: 5px 30px;     /* Thin height (5px), long width (30px) */
-    background-color: #778899;
+    background-color: #CAD1E3;
     color: white;
     text-decoration: none;
     border-radius: 5px;
