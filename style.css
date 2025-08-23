@@ -138,8 +138,14 @@ main {
 
 /* "Send an email" button styles */
 .button-container {
-    text-align: center;
-    margin-top: 40px;
+
+}
+
+.contact-section {
+    display: flex; /* Aligns items in a row */
+    align-items: center; /* Vertically aligns the text and button */
+    gap: 30px; /* Creates space between the text and button */
+    flex-wrap: wrap; /* Allows them to stack on very small screens */
 }
 
 .email-button {
