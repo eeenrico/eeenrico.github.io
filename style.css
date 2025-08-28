@@ -16,6 +16,10 @@
     color: #B71761;
 }
 
+.container-centered {
+    justify-content: center;
+}
+
 
 /* ======================================= */
 /* Desktop Styles (for screens > 1024px)    */
