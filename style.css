@@ -20,6 +20,10 @@
     justify-content: center;
 }
 
+.container-centered > main {
+    flex-grow: 0;
+}
+
 
 /* ======================================= */
 /* Desktop Styles (for screens > 1024px)    */
