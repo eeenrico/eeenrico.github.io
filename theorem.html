@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<header>
+    <button class="hamburger-menu" id="menu-toggle">&#9776;</button>
+    <button class="hamburger-menu right" id="secondary-menu-toggle">&#9776;</button>
+
+    <div class="header-links" id="header-menu">
+        <a href="https://eeenrico.github.io/" class="home-link">Homepage</a>
+        <a href="https://www.unibo.it/sitoweb/enrico.masina3/" target="_blank" class="external-link">UniBo</a>
+        <a href="https://virtuale.unibo.it/" target="_blank" class="external-link">Virtuale</a>
+        <a href="email.html" class="external-link">Email</a>
+        <a href="ricevimenti.html" class="external-link">Ricevimenti</a>
+    </div>
+    
+    <img src="pigeons.jpg" class="main-photo" alt="A descriptive caption for your image">
+
+    <div class="header-info">
+        <div class="name-logo-group">
+            <span>Enrico Masina</span>
+            <img src="unibologo.png" alt="University of Bologna">
+        </div>
+        <nav class="secondary-nav" id="secondary-menu">
+            <ul>
+                
+                <li><a href="conferences.html">Conferences and Talks</a></li>
+                <li><a href="https://oeis.org/A357110" target="_blank">My O.E.I.S. Sequence</a></li>
+                <li><a href="theorem.html">Weekly Theorem</a></li>
+                <li><a href="past.html">Past Activities</a></li>
+                <li><a href="strangelets.html">Strangelets</a></li>
+                
+                </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+
+    <main>
+
+              <h2 style="color: #B71761;">Theorem of the Week</h2>
+        <hr>
+        
+        <p></p>
+        Be \(b \in \mathbb{R}\). <br>
+        If \(\phi(x) + \phi'(x) \to b\) as \(x \to +\infty\), then \(\phi(x) \to b\) and \(\phi'(x) \to 0\).
+        <p></p>
+        <em>G. H. Hardy</em>    
+
+    </main>
+</div>
+
+</main>
+</div>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const headerMenu = document.getElementById('header-menu');
+    menuToggle.addEventListener('click', function() {
+        headerMenu.classList.toggle('show');
+    });
+</script>
+
+<script>
+    const secondaryMenuToggle = document.getElementById('secondary-menu-toggle');
+    const secondaryMenu = document.getElementById('secondary-menu');
+    secondaryMenuToggle.addEventListener('click', function() {
+        secondaryMenu.classList.toggle('show');
+    });
+</script>
+
+</body>
+</html>
