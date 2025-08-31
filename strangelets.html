@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <button class="hamburger-menu" id="menu-toggle">&#9776;</button>
+    <button class="hamburger-menu right" id="secondary-menu-toggle">&#9776;</button>
+
+    <div class="header-links" id="header-menu">
+        <a href="https://eeenrico.github.io/" class="home-link">Homepage</a>
+        <a href="https://www.unibo.it/sitoweb/enrico.masina3/" target="_blank" class="external-link">UniBo</a>
+        <a href="https://virtuale.unibo.it/" target="_blank" class="external-link">Virtuale</a>
+        <a href="email.html" class="external-link">Email</a>
+        <a href="ricevimenti.html" class="external-link">Ricevimenti</a>
+    </div>
+    
+    <img src="pigeons.jpg" class="main-photo" alt="A descriptive caption for your image">
+
+    <div class="header-info">
+        <div class="name-logo-group">
+            <span>Enrico Masina</span>
+            <img src="unibologo.png" alt="University of Bologna">
+        </div>
+        <nav class="secondary-nav" id="secondary-menu">
+            <ul>
+                
+                <li><a href="conferences.html">Conferences and Papers</a></li>
+                <li><a href="https://oeis.org/A357110" target="_blank">My O.E.I.S. Sequence</a></li>
+                <li><a href="theorem.html">Weekly Theorem</a></li>
+                <li><a href="past.html">Past Activities</a></li>
+                <li><a href="strangelets.html">Strangelets</a></li>
+                
+                </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="mat.html">Matematica</a></li>
+            <li><a href="cs.html">Informatica</a></li>
+            <li><a href="eco.html">Economia Aziendale</a></li>
+            <li><a href="emi.html">Economia, Mercati e Istituzioni</a></li>
+            <li><a href="manag.html">Informatica per il Management</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h3 style="color: #B71761;">Everyone should read:</h3>
+        <ul>
+          <li><a href="https://web.cs.ucdavis.edu/~rogaway/classes/188/materials/Industrial%20Society%20and%20Its%20Future.pdf"
+                 target="_blank"> Theodore Kaczynski - The Industrial Society and Its Future</li>
+
+          <li><a href="https://amzn.eu/d/izWpoW0" target="_blank"> Stephen Pinker - Enlightenment Now</a></li>
+
+          <li><a href="https://amzn.eu/d/bK3V15f" target="_blank"> Sharon McGrayne - The Theory that would not die </a></li>
+
+          <li><a href="https://amzn.eu/d/ax3NRtY" target="_blank"> Steven Levitt - Freakonomics</a></li>
+
+          <li><a href="https://amzn.eu/d/8koaAcp" target="_blank"> Temple Grandin - The Autistic Brain</a></li>
+          
+        </ul>
+      
+        <h3 style="color: #B71761;">Mathematicians(*) shall read:</h3>
+
+      <ul>
+
+        <li><a href="https://amzn.eu/d/61a3xpD" target="_blank"> Graham, Knuth, Patashnik - Concrete Mathematics</a></li>
+
+        <li></li>
+        
+      </ul>
+        
+        
+    </main>
+    </div>
+
+
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const headerMenu = document.getElementById('header-menu');
+    menuToggle.addEventListener('click', function() {
+        headerMenu.classList.toggle('show');
+    });
+</script>
+
+<script>
+    const secondaryMenuToggle = document.getElementById('secondary-menu-toggle');
+    const secondaryMenu = document.getElementById('secondary-menu');
+    secondaryMenuToggle.addEventListener('click', function() {
+        secondaryMenu.classList.toggle('show');
+    });
+</script>
+
+</body>
+</html>
