@@ -92,6 +92,8 @@ header img.main-photo {
 .name-logo-group {
     display: flex;
     align-items: center;
+    align-self: center; /* This overrides the right-alignment and centers it over the buttons */
+    margin-bottom: 10px; /* Optional: adds a little breathing room between the logo and the first button */
 }
 
 /* Stile per il nome */
